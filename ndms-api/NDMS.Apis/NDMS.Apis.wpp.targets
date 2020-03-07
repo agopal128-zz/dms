@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+	<PrepareForBuildDependsOn>
+		$(PrepareForBuildDependsOn);
+		UpdateWebConfigBeforeBuild;
+	</PrepareForBuildDependsOn>
+</PropertyGroup>
+<!-- This target will run right before you run your app in Visual Studio -->
+<Target Name="UpdateWebConfigBeforeBuild">
+	<Message Text="Configuration: $(Configuration): web.template.$(Configuration).config"/>
+	<TransformXml Source="web.template.config" Transform="C:\Config\web.template.$(Configuration).config" Destination="web.config" />
+</Target>
+<!-- Exclude the config template files from the created package -->
+<Target Name="ExcludeCustomConfigTransformFiles" BeforeTargets="ExcludeFilesFromPackage">
+	<ItemGroup>
+		<ExcludeFromPackageFiles Include="web.template.config;web.template.*.config"/>
+	</ItemGroup>
+	<Message Text="ExcludeFromPackageFiles: @(ExcludeFromPackageFiles)" Importance="high"/>
+</Target>
+</Project>

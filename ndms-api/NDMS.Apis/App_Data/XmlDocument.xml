@@ -1,0 +1,1437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NDMS.Apis</name>
+    </assembly>
+    <members>
+        <member name="M:NDMS.Apis.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:NDMS.Apis.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:NDMS.Apis.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:NDMS.Apis.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:NDMS.Apis.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:NDMS.Apis.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:NDMS.Apis.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,NDMS.Apis.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,NDMS.Apis.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:NDMS.Apis.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},NDMS.Apis.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.#ctor(NDMS.Apis.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,NDMS.Apis.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:NDMS.Apis.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NDMS.Apis.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NDMS.Apis.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:NDMS.Apis.Controllers.ActualsController">
+            <summary>
+            Web API Controller to deal with Actuals entry 
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.ActualsController.scorecardManager">
+            <summary>
+            IScorecardManager reference
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.ActualsController.userManager">
+            <summary>
+            IUserManager reference
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.ActualsController.actualsManager">
+            <summary>
+            IActualsManager reference
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.#ctor(NDMS.Business.Interfaces.IScorecardManager,NDMS.Business.Interfaces.IActualsManager,NDMS.Business.Interfaces.IUserManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="scorecardManager">IScorecardManager reference</param>
+            <param name="actualsManager">IActualsManager reference</param>
+            <param name="userManager">IUserManager reference</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.GetDailyTarget(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve daily target of a day in a month
+            </summary>
+            <param name="targetId">target id</param>
+            <param name="day">selected day</param>
+            <param name="month">selected month</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.GetMonthlyTarget(System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve monthly target of a month
+            </summary>
+            <param name="targetId">target id</param>
+            <param name="month">selected month</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.IsUserAdminOrKpiOwnerOrTeamMemberofScorecard(System.Int32)">
+            <summary>
+            Api to check if a User is allowed to enter actuals, Mark holiday or enter counter measure.
+            </summary>
+            <param name="scorecardId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.AddActual(NDMS.DomainModel.DTOs.ActualItem)">
+            <summary>
+            Api to add a new daily/monthly actual value
+            </summary>
+            <param name="actualRequest">actual request object</param>
+            <returns>New actual entry's Id</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.PutActual(NDMS.DomainModel.DTOs.ActualItem)">
+            <summary>
+            Api to update a daily/monthly actual value
+            </summary>
+            <param name="actualRequest">actual request object</param>
+            <returns>Status of the actual value against the target entry</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.MarkHoliday(System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            Api to mark a day as holiday
+            </summary>
+            <param name="targetId">target id of the primary metric</param>
+            <param name="date">Date which needs to be marked as holiday</param>
+            <param name="scorecardId">Scorecard Id</param>
+            <returns>New/updated actual entry's Id</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.UnmarkHoliday(System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            Api to unmark a day which has been marked as holiday
+            </summary>
+            <param name="targetId">target id of the primary metric</param>
+            <param name="date">Date which needs to be unmarked as holiday</param>
+            <param name="scorecardId">Scorecard Id</param>
+            <returns>New/updated actual entry's Id</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.GetDrillDownHierarchy(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve scorecard hierarchy with status corresponding to selected scorecard kpi
+            </summary>
+            <param name="scorecardId">scorecard id</param>
+            <param name="kpiId">kpi id</param>
+            <param name="month">selected month</param>
+            <param name="yearId">selected year Id</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.GetDrillDownHierarchyOnDate(System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            Api to retrieve scorecard hierarchy with status corresponding to selected scorecard kpi for the selected date
+            </summary>
+            <param name="scorecardId">scorecard id</param>
+            <param name="kpiId">kpi id</param>
+            <param name="date">The date.</param>
+            <returns>
+            HTTP response which conveys the status of the operation
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ActualsController.GetScorecardKPIs(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve scorecard Kpi's
+            </summary>
+            <param name="scorecardId">Identifier of scorecard</param>
+            <param name="month">The month.</param>
+            <param name="yearId">Identifier of calendar year</param>
+            <returns>
+            List of kpis and its associated targets
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.BaseController.CheckModelState">
+            <summary>
+            Method to validate model state
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.BaseController.IsUserKPIOwnerNotAdmin">
+            <summary>
+            Check if the user is a kpi owner but not an admin
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.BaseController.IsUserKPIOwnerOrTeamMemberNotAdmin">
+            <summary>
+            Determines whether [is user kpi owner or team member not admin].
+            </summary>
+            <returns>
+              <c>true</c> if [is user kpi owner or team member not admin]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.BaseController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Controllers.BaseController.Username">
+            <summary>
+            Authenticated user name
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Controllers.ConfigurationController">
+            <summary>
+            API controller to deal with configuration data and general data look up
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ConfigurationController.#ctor(NDMS.Business.Interfaces.IConfigurationSettingsManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="cfgSettingsManager">IConfigurationSettingsManager reference</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ConfigurationController.GetAll">
+            <summary>
+            Method to retrieve web config values
+            </summary>
+            <returns>web config values as dictionary</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ConfigurationController.GetCurrentDateAndYearId">
+            <summary>
+            Api to return current date and year Id 
+            </summary>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ConfigurationController.GetAllYearMonthsList">
+            <summary>
+            Retrieves the list of months in year
+            </summary>
+            <returns>List of months in year</returns>
+        </member>
+        <member name="T:NDMS.Apis.Controllers.CounterMeasureController">
+            <summary>
+            Web API Controller to deal with CounterMeasure 
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.CounterMeasureController.counterMeasureManager">
+            <summary>
+            ICounterMeasureManager reference
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.CounterMeasureController.userManager">
+            <summary>
+            IUserManager reference
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.#ctor(NDMS.Business.Interfaces.ICounterMeasureManager,NDMS.Business.Interfaces.IUserManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="counterMeasureManager">ICounterMeasureManager reference</param>
+            <param name="userManager">IUserManager reference</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.GetCounterMeasures(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Api to list all counter measure for the selected year
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="kpiId">KPI Id</param>
+            <param name="isShowClosed">Flag to show closed counter measures</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.GetAllCounterMeasureStatus">
+            <summary>
+            Api to list all counter measure status
+            </summary>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.GetActualandCounterMeasureStatus(NDMS.DomainModel.DTOs.ActualStatusRequest)">
+            <summary>
+            Api to check whether target is achieved or not by comparing goal and actuals based on 
+            goal type and return status and outstanding counter measure details if any 
+            </summary>
+            <param name="request">Input Request</param>
+            <returns></returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.GetCounterMeasure(System.Int32)">
+            <summary>
+            Api to get counter measure details
+            </summary>
+            <param name="counterMeasureId">counter measure id</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.PostCounterMeasure(NDMS.DomainModel.DTOs.CounterMeasureAddRequest)">
+            <summary>
+            Api to add new counter measure when target is not met
+            </summary>
+            <param name="counterMeasureRequest">counter measure object</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.PutCounterMeasure(NDMS.DomainModel.DTOs.CounterMeasureEditRequest)">
+            <summary>
+            Api to update an existing counter measure 
+            </summary>
+            <param name="counterMeasureRequest">counter measure object</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.GetScorecardKPIMetrics(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Method to retrieve metrics belonging to a kpi in a scorecard
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="kpiId">KPI Id</param>
+            <param name="yearId">Year Id</param>
+            <param name="month">Month</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.CounterMeasureController.GetAllCounterMeasurePriority">
+            <summary>
+            Api to list all counter measure priority
+            </summary>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="T:NDMS.Apis.Controllers.HolidayPatternController">
+            <summary>
+            API Controller to deal with Holiday patterns and holiday pattern definition
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.HolidayPatternController.holidayPatternManager">
+            <summary>
+            HolidayPatternManager Reference
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.HolidayPatternController.GetAllHoldayPatterns">
+            <summary>
+            Action method to retrieve all Holiday Patterns
+            </summary>
+            <returns>HolidayPatternItem List</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.HolidayPatternController.PostHolidayPattern(NDMS.DomainModel.DTOs.HolidayPatternItem)">
+            <summary>
+            Action Method to Add or Update Holiday Pattern
+            </summary>
+            <param name="holidayPattern"></param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.HolidayPatternController.UpdateHolidayPatternInfo(NDMS.DomainModel.DTOs.HolidayPatternInfoRequest)">
+            <summary>
+            Updates holidays associated with the holiday Pattern
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.HolidayPatternController.CopyHolidayPatternInfo(System.Int32)">
+            <summary>
+            Copies once holiday Pattern ID to create new Pattern
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Controllers.MetricController">
+            <summary>
+            Api Controller for Metric
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.MetricController.metricManager">
+            <summary>
+            IMetricManager reference
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.MetricController.#ctor(NDMS.Business.Interfaces.IMetricManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="metricManager">IMetricManager reference</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.MetricController.GetAll">
+            <summary>
+            Method to retrieve all active metrics
+            </summary>
+            <returns>metric list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.MetricController.Get(System.Int32)">
+            <summary>
+            Retrieve selected metric
+            </summary>
+            <param name="id">selected metric id</param>
+            <returns>metric item</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.MetricController.GetMetricTemplateData">
+            <summary>
+            Api to retrieve all active goal types and data types 
+            to fill dropdown in Add/Edit Metric screen
+            </summary>
+            <returns>
+            response object containing list of goal types and data types  
+            and KPIs
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.MetricController.GetAllMetricMappings">
+            <summary>
+            Method to retrieve all assigned metrics
+            </summary>
+            <returns>metric mapping list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.MetricController.GetMetricsWithName(System.String)">
+            <summary>
+            Get all metrics whose name starts with the input string mentioned.
+            </summary>
+            <param name="name">Input name to match</param>
+            <returns>List of metrics whose name starts with the input string</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.MetricController.AddorUpdateMetricMapping(System.Collections.Generic.List{NDMS.DomainModel.DTOs.MetricMappingItem})">
+            <summary>
+            Api to add or update metric mapping
+            </summary>
+            <param name="metricMappingRequest">list of metric mapping object</param>
+            <returns>http response</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.MetricController.AddorUpdateMetric(System.Collections.Generic.List{NDMS.DomainModel.DTOs.MetricItem})">
+            <summary>
+            Api to add or update metric 
+            </summary>
+            <param name="metricRequest">list of metric object</param>
+            <returns>http response</returns>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.OrganizationalDataController.organizationalDataManager">
+            <summary>
+            IOrganizationalDataManager reference
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.#ctor(NDMS.Business.Interfaces.IOrganizationalDataManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="organizationalDataManager">IOrganizationalDataManager reference</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetScorecardTemplateData(System.Nullable{System.Int32})">
+            <summary>
+            Method to retrieve Business Segments, Productlines, Processes, Departments 
+            and KPIs to fill dropdown in Add ScoreCard screen
+            </summary>
+            <param name="parentScorecardId">ID of parent scorecard</param>
+            <returns>
+            response object containing list of Business Segments, Productlines, Processes, Departments 
+            and KPIs
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetMetricMappingTemplateData">
+            <summary>
+            Method to retrieve Business Segments, Productlines, Processes, Departments 
+            and KPIs to fill dropdown in Add Metric Mapping
+            </summary>
+            <returns>
+            response object containing list of Business Segments, Productlines, Processes, Departments 
+            and KPIs
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetBusinessSegments">
+            <summary>
+            Method to get business segments
+            </summary>
+            <returns>api response with business segment list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetDivisions">
+            <summary>
+            Method to get divisions
+            </summary>
+            <returns>api response with division list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetDepartments">
+            <summary>
+            Method to get departments
+            </summary>
+            <returns>api response with department list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetProductLines">
+            <summary>
+            Method to get product lines
+            </summary>
+            <returns>api response with product lines</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetFacilities">
+            <summary>
+            Method to get facilities
+            </summary>
+            <returns>api response with facility list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetProcesses">
+            <summary>
+            Method to get processes
+            </summary>
+            <returns>api response with processes list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.AddOrUpdateBusinessSegments(System.Collections.Generic.List{NDMS.DomainModel.DTOs.BusinessSegmentItem})">
+            <summary>
+            Api to add or update business segment
+            </summary>
+            <param name="businessSegmentRequest">list of business segment object</param>
+            <returns>http response</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.AddOrUpdateDivisions(System.Collections.Generic.List{NDMS.DomainModel.DTOs.DivisionItem})">
+            <summary>
+            Api to add or update divisions 
+            </summary>
+            <param name="divisionRequest">list of divisions object</param>
+            <returns>http response</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.AddOrUpdateFacilities(System.Collections.Generic.List{NDMS.DomainModel.DTOs.FacilityItem})">
+            <summary>
+            Api to add or update facility
+            </summary>
+            <param name="facilityRequest">list of facility object</param>
+            <returns>http response</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.AddOrUpdateProductLines(System.Collections.Generic.List{NDMS.DomainModel.DTOs.ProductLineItem})">
+            <summary>
+            Api to add or update product line
+            </summary>
+            <param name="productLineRequest">list of  product line object</param>
+            <returns>http response</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.AddOrUpdateDepartments(System.Collections.Generic.List{NDMS.DomainModel.DTOs.DepartmentItem})">
+            <summary>
+            Api to add or update department
+            </summary>
+            <param name="departmentRequest">list of  department object</param>
+            <returns>http response</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.AddOrUpdateProcess(System.Collections.Generic.List{NDMS.DomainModel.DTOs.ProcessItem})">
+            <summary>
+            Api to add or update process
+            </summary>
+            <param name="processRequest">list of  process object</param>
+            <returns>http response</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.OrganizationalDataController.GetOrganizationalData">
+            <summary>
+            Method to get organizational data
+            </summary>
+            <returns>api response with organizational data</returns>
+        </member>
+        <member name="T:NDMS.Apis.Controllers.ScorecardAdminController">
+            <summary>
+            Web API Controller for scorecard admin features
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.ScorecardAdminController.scorecardAdminMgr">
+            <summary>
+            IScorecardAdminManager reference
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.ScorecardAdminController.userManager">
+            <summary>
+            The user manager
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardAdminController.#ctor(NDMS.Business.Interfaces.IScorecardAdminManager,NDMS.Business.Interfaces.IUserManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="scorecardAdminManager">IScorecardAdminManager reference</param>
+            <param name="userManager">The user manager.</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardAdminController.Get(System.Int32)">
+            <summary>
+            Retrieves scorecard by id
+            </summary>
+            <param name="id">Identifier of the score card</param>
+            <returns>scorecard object</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardAdminController.Add(NDMS.DomainModel.DTOs.ScorecardItem)">
+            <summary>
+            Api to add scorecard
+            </summary>
+            <param name="scorecardRequest">Scorecard add request</param>
+            <returns>New scorecard's id</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardAdminController.Put(NDMS.DomainModel.DTOs.ScorecardItem)">
+            <summary>
+            Api to update a scorecard
+            </summary>
+            <param name="scorecardRequest">scorecard object</param>
+            <returns>scorecard id</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardAdminController.SwapSortOrder(NDMS.DomainModel.DTOs.SwapScorecardSortOrderRequest)">
+            <summary>
+            API to change Sort Order
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardAdminController.GetScorecardHierarchy(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Api to display all the Scorecards in a hierarchy mode
+            </summary>
+            <param name="topScorecardId"></param>
+            <param name="selectedScorecardId"></param>
+            <returns> Scorecard Hierarchy</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardAdminController.GetHierarchyDropdownList">
+            <summary>
+             Gets the scorecards of logged in user.
+             </summary>
+            <returns>The list of available templates</returns>
+        </member>
+        <member name="T:NDMS.Apis.Controllers.ScorecardController">
+            <summary>
+            Web API Controller to deal with score card display
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.ScorecardController.scorecardManager">
+            <summary>
+            IScorecardManager reference
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.ScorecardController.scorecardGraphManager">
+            <summary>
+            IScorecardGraphManager reference
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.#ctor(NDMS.Business.Interfaces.IScorecardManager,NDMS.Business.Interfaces.IScorecardGraphManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="scorecardManager">IScorecardManager reference</param>
+            <param name="scorecardGraphManager">IScorecardGraphManager reference</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.GetScorecardKPIData(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve details of individual scorecard kpi for a selected month and year
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="kpiId">KPI Id</param>
+            <param name="yearId">Identifier of the year</param>
+            <param name="month">month</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.GetScorecardKPISecondaryMetricData(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the scorecard kpi for secondary metric.
+            </summary>
+            <param name="kpiId">The kpi identifier.</param>
+            <param name="targetId">The target identifier.</param>
+            <param name="yearId">The year identifier.</param>
+            <param name="month">The month.</param>
+            <returns>Scorecard KPI data</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.GetScorecardData(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve the scorecard data for the current year/month depends on the
+            tracking method selected for primary metric
+            </summary>
+            <param name="scorecardId">Identifier of the scorecard</param>
+            <param name="yearId">Identifier of the year for which we need score card data</param>
+            <param name="month">Identifier of the year for which we need score card data</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.GetFiscalMonthStatusForKPI(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve fiscal month status of the primary metric of a KPI for an year
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="kpiId">KPI Id</param>
+            <param name="yearId">Identifier of the year</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.GetFiscalMonthStatusForScorecard(System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve fiscal month status of a scorecard considering only primary metrics
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="yearId">Identifier of the year</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.GetScorecardGraphData(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Api to get data to display graph for all kpi's for a given scorecard
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="yearId">Year Id</param>
+            <param name="month">Month</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.GetScorecardKPIGraphData(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Api to get data to display graph for a scorecard's selected kpi's primary metric
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="kpiId">KPI Id</param>
+            <param name="yearId">Year Id</param>
+            <param name="month">Month</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.ScorecardController.GetScorecardMetricKPIGraphData(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the scorecard kpi graph data for selected metric.
+            </summary>
+            <param name="metricTargetId">The metric target identifier.</param>
+            <param name="kpiId">The kpi identifier.</param>
+            <param name="yearId">The year identifier.</param>
+            <param name="month">The month.</param>
+            <returns></returns>
+        </member>
+        <member name="T:NDMS.Apis.Controllers.TargetsController">
+            <summary>
+            API Controller for Targets module
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.TargetsController.targetManager">
+            <summary>
+            ITargetManager reference
+            </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.TargetsController.userManager">
+            <summary>
+            IUserManager reference
+             </summary>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.TargetsController.scorecardManager">
+            <summary>
+            IScorecardManager reference
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.#ctor(NDMS.Business.Interfaces.ITargetManager,NDMS.Business.Interfaces.IUserManager,NDMS.Business.Interfaces.IScorecardManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="targetManager">ITargetManager reference</param>
+            <param name="userManager">IUserManager reference</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetTargetsInitialData(System.Int32,System.Boolean)">
+            <summary>
+            Api to retrieve initial data to load targets screen (year, roll up method list)
+            and bool to check whether bowling chart is applicable or not
+            </summary>
+            <param name="scorecardId">Identifier of scorecard</param>
+            <param name="canEdit">Flag to know if page is rendered in viewmode or edit mode.</param>
+            <returns>object with year and roll up method list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetScorecardKPIs(System.Int32,System.Int32)">
+            <summary>
+            Api to retrieve scorecard Kpi's
+            </summary>
+            <param name="scorecardId">Identifier of scorecard</param>
+            <param name="yearId">Identifier of calendar year</param>
+            <returns>List of kpis and its associated targets</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetTargetsForScorecardAndKPI(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Retrieves all targets for a scorecard and KPI belongs to an year
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="kpiId">KPI Id</param>
+            <param name="yearId">Year id</param>
+            <returns>List of target entries</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetDailyTargets(System.Int32)">
+            <summary>
+            API to retrieve daily targets for a month
+            </summary>
+            <param name="monthlyTargetId">Monthly Target Id</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GenerateDailyTargets(NDMS.DomainModel.DTOs.GenerateDailyTargetsRequest)">
+            <summary>
+            Gets the list of available workdays of the month with monthly goal distributed evenly if applicable
+            </summary>
+            <param name="request"></param>
+            object containing scorecardId, MetricId, YearId, MonthId, Effective Dates, Goal value/DailyRate
+            <returns>List of system generated daily Target </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetMetrics(System.Int32,System.Int32)">
+            <summary>
+            Method to retrieve all metrics associated with selected KPI 
+            having organization data same as that of selected scorecard
+            </summary>
+            <param name="kpiId">KPI id</param>
+            <param name="scorecardId">Scorecard id</param>
+            <returns>Metric list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetCascadedMetricDetails(NDMS.DomainModel.DTOs.MetricCascadeRequest)">
+            <summary>
+            Method to check whether parent scorecard has the same metric set for the KPI selected 
+            by child scorecard
+            </summary>
+            <param name="request">
+            object containing parent scorecard id and the selected metric id,
+            kpi id and metric type of child scorecard
+            </param>
+            <returns>Target details if target can be cascaded</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetMonthsListForCalendarYear(System.Int32)">
+            <summary>
+            Returns month's list for a calendar year in ascending order
+            </summary>
+            <param name="yearId">Calendar year id</param>
+            <returns>Months list</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.PostMetricTarget(NDMS.DomainModel.DTOs.TargetItem)">
+            <summary>
+            API to add a new primary target which belongs to a scorecard and KPI
+            </summary>
+            <param name="targetRequest">Target entry</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.PutMetricTarget(NDMS.DomainModel.DTOs.TargetItem)">
+            <summary>
+            API to Update target for a primary metric which belongs to a scorecard and KPI
+            </summary>
+            <param name="targetRequest">target entry to be updated</param>
+            <returns>http response</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.IsMetricTargetsCascadedCompletely(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            API to check whether the targets for cascaded metric set on a score card is cascaded 
+            completely to child score cards
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="kpiId">KPI Id</param>
+            <param name="metricId">Metric Id</param>
+            <param name="calendarYearId">Calendar year Id</param>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetMaximumAllowedMonthlyGoals(System.Int32,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves the maximum allowed monthly goal for a new/existing target which is
+            going to be/being cascaded
+            </summary>
+            <param name="parentTargetId">Parent target Id</param>
+            <param name="rollUpMethodId">Selected rollup method id</param>
+            <param name="childTargetId">Child target Id(if child target is existing)</param>
+            <param name="targetEntryMethodId">The target entry method identifier.</param>
+            <returns>
+            Maximum allowed monthly goals
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.DeleteMetricTarget(System.Int32,System.Int32)">
+            <summary>
+             Deletes a specific metric target if the metric has no actuals entered. This also deletes the 
+             target from history
+            </summary>
+             <param name="targetId">target Id</param>
+             <param name="scorecardId">scorecard Id</param>
+             <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.GetTargetsForScorecard(System.Int32,System.Int32)">
+            <summary>
+            Retrieves all targets for a scorecard belongs to an year
+            </summary>
+            <param name="scorecardId">Scorecard Id</param>
+            <param name="yearId">Year id</param>
+            <returns>List of target entries</returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.TargetsController.PostCopyTargets(System.Int32,NDMS.DomainModel.DTOs.CopiedScorecardItem)">
+            <summary>
+            Copies the targets.
+            </summary>
+            <param name="scorecardId">the scorecard Id</param>
+            <param name="targetRequest">The target request.</param>
+            <returns>
+            true is copied, otherwise false
+            </returns>
+        </member>
+        <member name="F:NDMS.Apis.Controllers.UserController.userManager">
+            <summary>
+            IUserManager reference
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.UserController.#ctor(NDMS.Business.Interfaces.IUserManager)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="userManager">IUserManager reference</param>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.UserController.GetNDMSUsersWithLastName(System.String)">
+            <summary>
+            Get all NDMS users whose first name or last name starts with the 
+            input string mentioned.
+            </summary>
+            <param name="name">Input name to match</param>
+            <returns>
+            List of NDMS users whose first name or last name starts with the input string
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.UserController.GetADUsersWithLastNameOrAccountName(System.String)">
+            <summary>
+            Get all AD users whose account name or last name starts with the input string mentioned.
+            </summary>
+            <param name="name">Input name to match</param>
+            <returns>
+            List of AD users whose first name or last name starts with the input string
+            </returns>
+        </member>
+        <member name="M:NDMS.Apis.Controllers.UserController.GetScorecardIdAndTargetStatus">
+            <summary>
+            Api to retrieve scorecard id and check whether any targets are available for 
+            the current logged in user
+            </summary>
+            <returns>HTTP response which conveys the status of the operation</returns>
+        </member>
+        <member name="T:NDMS.Apis.DependencyResolution.StructureMapWebApiControllerActivator">
+            <summary>
+            Implements a Controller activator and hooks Structure map inside
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.DependencyResolution.StructureMapWebApiControllerActivator.#ctor(StructureMap.IContainer)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="container">Structure map container reference</param>
+        </member>
+        <member name="M:NDMS.Apis.DependencyResolution.StructureMapWebApiControllerActivator.Create(System.Net.Http.HttpRequestMessage,System.Web.Http.Controllers.HttpControllerDescriptor,System.Type)">
+            <summary>
+            Will be invoked when a need to create a new instance of HTTP Controller
+            </summary>
+            <param name="request"></param>
+            <param name="controllerDescriptor"></param>
+            <param name="controllerType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NDMS.Apis.Filters.CustomExceptionFilterAttribute">
+            <summary>
+            Exception filter which takes care about the exception handling for whole API's. We don't want to
+            add try catch in all Web Api controllers
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Filters.CustomExceptionFilterAttribute.HandleSystemException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            Handles all unhandled exceptions
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDMS.Apis.Filters.CustomExceptionFilterAttribute.HandleBusinessException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            Handles the particular business exception thrown business layer
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDMS.Apis.Filters.CustomExceptionFilterAttribute.ComposeExceptionLog(System.Web.Http.Filters.HttpActionExecutedContext,System.Guid)">
+            <summary>
+            Compose the log message for the exception
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <param name="exceptionIdentifier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NDMS.Apis.Filters.CustomExceptionFilterAttribute.OnException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            Will be invoked when an exception is thrown
+            </summary>
+            <param name="actionExecutedContext"></param>
+        </member>
+        <member name="T:NDMS.Apis.Models.ApiResponse`1">
+            <summary>
+            Response object which needs to send to the client by every REST API
+            </summary>
+            <typeparam name="T">Type of the actual </typeparam>
+        </member>
+        <member name="M:NDMS.Apis.Models.ApiResponse`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Models.ApiResponse`1.#ctor(`0)">
+            <summary>
+            Parameterized constructor
+            </summary>
+            <param name="data">Actual response object</param>
+        </member>
+        <member name="P:NDMS.Apis.Models.ApiResponse`1.Data">
+            <summary>
+            The underlying response object
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Models.ApiResponse`1.HasError">
+            <summary>
+            Flag which says whether any error occurred 
+            </summary>
+        </member>
+        <member name="P:NDMS.Apis.Models.ApiResponse`1.Errors">
+            <summary>
+            List of errors if any which needs to pass to the client
+            </summary>
+        </member>
+        <member name="T:NDMS.Apis.Providers.NDMSApiOAuthProvider">
+            <summary>
+            Implements an OAuth provider for the API
+            </summary>
+        </member>
+        <member name="M:NDMS.Apis.Providers.NDMSApiOAuthProvider.ValidateClientAuthentication(Microsoft.Owin.Security.OAuth.OAuthValidateClientAuthenticationContext)">
+            <summary>
+            Called to validate that the origin of the request is a registered "client_id", 
+            and that the correct credentials for that client are present on the request.
+            </summary>
+            <param name="context">Context information</param>
+            <returns>Task to enable asynchronous execution</returns>
+        </member>
+        <member name="M:NDMS.Apis.Providers.NDMSApiOAuthProvider.GrantResourceOwnerCredentials(Microsoft.Owin.Security.OAuth.OAuthGrantResourceOwnerCredentialsContext)">
+            <summary>
+            Called when a request to the Token endpoint arrives with a "grant_type" of "password". 
+            This occurs when the user has provided name and password credentials directly into the 
+            client application's user interface, and the client application is using those 
+            to acquire an "access_token" and optional "refresh_token"
+            </summary>
+            <param name="context">Context information</param>
+            <returns>Task to enable asynchronous execution</returns>
+        </member>
+        <member name="M:NDMS.Apis.Providers.NDMSApiOAuthProvider.CreateProperties(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Create Authentication properties
+            </summary>
+            <param name="username">User name</param>
+            <param name="fullName">Full user name</param>
+            <param name="roles">Roles associated</param>
+            <returns>Auth propertries created</returns>
+        </member>
+        <member name="T:NDMS.Apis.Startup">
+            <summary>
+            OWIN start-up class
+            </summary>
+        </member>
+    </members>
+</doc>

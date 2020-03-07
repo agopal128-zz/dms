@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>NOV : Daily Management System</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/NDMSUI/">
+    <link rel="icon" type="image/x-icon" href="/NDMSUI/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/NDMSUI/favicon.ico" />
+    <link href="fonts/FontAwesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/ng-tags-input.bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/ng-tags-input.min.css" rel="stylesheet" />
+    <link href="Content/ui-grid.min.css" rel="stylesheet" />
+    <link href="Content/select.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet/less" type="text/css" href="Styles/calender.less" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css" />
+    <link href="Styles/slider/ion.rangeSlider.skinFlat.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,700italic,500italic,400italic,300italic,900' rel='stylesheet' type='text/css'>
+    <link href="Styles/NovDMS.min.css" rel="stylesheet" />
+
+</head>
+
+<body data-ng-controller="appController as appCtrl" ng-cloak>
+    <div id="ajaxSpinner" style="display:none"></div>
+    <div class="wrapper container main-page">
+        <div class="top-header">
+            <div class="header-left">
+                <a>
+                    <img src="Images/NOV_WellbDiv_Logo.png" class="logo" alt="NovDMS">
+                </a>
+            </div>
+            <div class="header-right pull-right">
+                <div class="date"><p>{{appCtrl.currentDate}}</p></div>
+                <div class="login-name" ng-if="appCtrl.user"><p>{{appCtrl.fullName}}</p></div>
+                <div class="sign-in" ng-if="!appCtrl.user">
+                    <a class="btn btn-sign-in" title="Sign In" ng-click="appCtrl.login()">Sign in</a>
+                </div>
+                <div class="sign-in" ng-if="appCtrl.user">
+                    <a class="btn btn-sign-in" title="Sign Out" ng-click="appCtrl.logout()">Sign out</a>
+                </div>
+                <div class="btn-close" id="close-btn" ng-show="appCtrl.isIE && appCtrl.isFullScreen">
+                    <i class="fa fa-times" aria-hidden="true" ng-click="appCtrl.close()"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div id="sidebar-wrapper" ng-show="appCtrl.user">
+                <div class="nav-top">
+                    <a href="#" class="sidebar-toggle menuIcon" role="button">
+                        <span class="fa fa-bars"></span>
+                    </a>
+                </div>
+                <nav>
+                    <app-menu data-menu="appCtrl.menuData"></app-menu>
+                </nav>
+            </div>
+            <div class="title-bar-wrap">
+                <div class="title-left">
+                    <div class="title-wrap">
+                        <div class="title-text"><h5 ng-class="{titleleft:!appCtrl.user}">{{title}}</h5></div>
+                        <div class="scorecard-dropdown dropdown" data-ng-if="isHierarchyDropdownVisible ||(isScorecardDropdownVisible && appCtrl.dropDownOptions.scorecardExists)">
+                            <button class="dropdown-toggle" type="button" title="Select Scorecard" data-toggle="dropdown" ng-disabled="disableHeader === true">
+                                <span class="fa fa-caret-down"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li ng-if="isHierarchyDropdownVisible && appCtrl.dropDownOptions.rootScorecards.length">
+                                    <span>Top Level Scorecards</span>
+                                <li>
+                                <li ng-if="isHierarchyDropdownVisible" ng-repeat="option in appCtrl.dropDownOptions.rootScorecards">
+                                    <a ng-click="appCtrl.changeSelectedScorcard(option)">{{option.name}}</a>
+                                </li>
+                                <li ng-if="appCtrl.dropDownOptions.kpiOwnerScorecards.length">
+                                    <span> KPI Owner Scorecards</span>
+                                </li>
+                                <li ng-repeat="option in appCtrl.dropDownOptions.kpiOwnerScorecards">
+                                    <a ng-if="isScorecardDropdownVisible" ng-href="Scorecard/{{option.id}}">{{option.name}}</a>
+                                    <a ng-if="isHierarchyDropdownVisible" ng-click="appCtrl.changeSelectedScorcard(option)">{{option.name}}</a>
+                                </li>
+
+                                <li ng-if="appCtrl.dropDownOptions.teamMemberScorecards.length">
+                                    <span> Team member Scorecards</span>
+                                </li>
+                                <li ng-repeat="option in appCtrl.dropDownOptions.teamMemberScorecards">
+                                    <a ng-if="isScorecardDropdownVisible" ng-href="Scorecard/{{option.id}}">{{option.name}}</a>
+                                    <a ng-if="isHierarchyDropdownVisible" ng-click="appCtrl.changeSelectedScorcard(option)">{{option.name}}</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="month-header" ng-if="isMonthNavigationVisible && displayMonth.name">
+                        <div class="month-select">
+                            <a class="prev" data-ng-click="appCtrl.loadPrevMonthData()" ng-class="{disabled: disableHeader === true}"><span class="fa fa-caret-left"></span></a>
+                            <ul>
+                                <li>{{displayMonth.name}} {{displayMonth.year}}</li>
+                            </ul>
+                            <a class="next" data-ng-click="appCtrl.loadNextMonthData()" ng-class="{disabled: disableHeader === true}"><span class="fa fa-caret-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-right">
+                    <div class="recordable" ng-if="daysWithoutRecordables != null && isRecordableVisible">
+                        <div class="text">
+                            <span># of Days Since Last Recordable</span>
+                        </div>
+                        <div class="count">{{daysWithoutRecordables}}</div>
+                    </div>
+
+                    <div ng-if="!isHierarchyDropdownVisible && kpiOwners.length" class="kpi-owners" ng-class="{'no-recordable':daysWithoutRecordables == null || !isRecordableVisible}" >
+                        <div class="kpi-owner">
+                            <p>KPI Owners :</p>
+                        </div>
+                        <div class="kpi-owner-name" ng-class="{inline:kpiOwners.length <= 2}">
+                            <span ng-repeat="vm in kpiOwners">{{vm}}<span ng-if="$index < kpiOwners.length-1">,</span>
+                                <br ng-if="$index == 1" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="toggle-scorecards" ng-if="isHierarchyDropdownVisible">
+                        <toggle-switch data-status ="showAllScorecards" data-label-left="'Include Inactive'" data-toggle="appCtrl.toggleHierarchy(showAllScorecards)"> </toggle-switch>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <section class="content">
+                <ng-view></ng-view>
+            </section>
+        </div>
+    </div>
+    <script data-main="main" src="Scripts/require.js"></script>
+</body>
+</html>

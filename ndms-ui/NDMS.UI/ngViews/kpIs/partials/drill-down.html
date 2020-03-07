@@ -1,0 +1,59 @@
+﻿<div class="drill-down-page">
+    <div class="row target-nav-wrapper">
+        <div class="col-md-12">
+            <div class="row target-nav-left">
+                <div class="btn-back-main">
+                    <i class="fa fa-arrow-circle-left" ng-click="ctrl.navigateToKPI()"></i>
+                </div>
+                <div class="kpi-tab">
+                    <div style="min-height:50px">
+                        <ul class="nav-tab" ng-init="ckecked=true">
+                            <li ng-if="ctrl.isKPIExists(0)" ng-class="{active: ctrl.isSet(0)}" ng-click="ctrl.setTab(0)" class="safety-tab"></li>
+                            <li ng-if="ctrl.isKPIExists(1)" ng-class="{active: ctrl.isSet(1)}" ng-click="ctrl.setTab(1)" class="quality-tab"></li>
+                            <li ng-if="ctrl.isKPIExists(2)" ng-class="{active: ctrl.isSet(2)}" ng-click="ctrl.setTab(2)" class="delivery-tab"></li>
+                            <li ng-if="ctrl.isKPIExists(3)" ng-class="{active: ctrl.isSet(3)}" ng-click="ctrl.setTab(3)" class="innovation-tab"></li>
+                            <li ng-if="ctrl.isKPIExists(4)" ng-class="{active: ctrl.isSet(4)}" ng-click="ctrl.setTab(4)" class="cost-tab"></li>
+                            <li ng-if="ctrl.isKPIExists(5)" ng-class="{active: ctrl.isSet(5)}" ng-click="ctrl.setTab(5)" class="people-tab"></li>
+                            <li ng-if="ctrl.isKPIExists(6)" ng-class="{active: ctrl.isSet(6)}" ng-click="ctrl.setTab(6)" class="revenue-tab"></li>
+                            <li ng-if="ctrl.isKPIExists(7)" ng-class="{active: ctrl.isSet(7)}" ng-click="ctrl.setTab(7)" class="net-working-capital-tab"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="toggle-drill-down pull-left">
+                    <div class="toggle-date">
+                        <date-picker date-model="ctrl.selectedDate"
+                                     date-options="ctrl.dateOptions" opened="ctrl.startDateOpened"
+                                     show-buttons ="false"/>
+                    </div>
+                    <div class="refresh-drill-down">
+                        <a class="btn refresh-btn" ng-click="ctrl.resetDrillDown()"></a>
+                    </div>
+                </div>
+                <div class="legend pull-right">
+                    <div class="legend-item-status">
+                        <a class="legend-scorecard-achieved"></a>All Metrics Green
+                    </div>
+                    <div class="legend-item-status">
+                        <a class="legend-scorecard-not-achieved"></a>Primary Red
+                    </div>
+                    <div class="legend-item-status">
+                        <a class="legend-scorecard-partially-achieved"></a>Secondary Red
+                    </div>
+                    <div class="legend-item">
+                        <img src="Images/recordable.png" height="15px" width="15px" /># of Days since last recordable
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" id="tree" ng-if="ctrl.showTree && ctrl.isDataLoaded">
+        <hierarchy-chart data-hierarchy-data="ctrl.drillDownData"></hierarchy-chart>
+    </div>
+    <div class="scorecard-content" ng-if="!ctrl.showTree && ctrl.isDataLoaded">
+        <div class="info">
+            <img src="Images/info.png">
+            <h4>No Data Available!</h4><h6></h6>
+        </div>
+    </div>
+</div>

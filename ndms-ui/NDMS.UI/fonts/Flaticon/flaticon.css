@@ -1,0 +1,127 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-accept6:before {
+	content: "\e000";
+}
+.flaticon-add156:before {
+	content: "\e001";
+}
+.flaticon-adobe21:before {
+	content: "\e002";
+}
+.flaticon-box51:before {
+	content: "\e003";
+}
+.flaticon-calendar52:before {
+	content: "\e004";
+}
+.flaticon-chevron9:before {
+	content: "\e005";
+}
+.flaticon-comments5:before {
+	content: "\e006";
+}
+.flaticon-delete81:before {
+	content: "\e007";
+}
+.flaticon-document115:before {
+	content: "\e008";
+}
+.flaticon-documents4:before {
+	content: "\e009";
+}
+.flaticon-double126:before {
+	content: "\e00a";
+}
+.flaticon-drop25:before {
+	content: "\e00b";
+}
+.flaticon-drop27:before {
+	content: "\e00c";
+}
+.flaticon-edit22:before {
+	content: "\e00d";
+}
+.flaticon-hammer26:before {
+	content: "\e00e";
+}
+.flaticon-list89:before {
+	content: "\e00f";
+}
+.flaticon-location4:before {
+	content: "\e010";
+}
+.flaticon-magnifying49:before {
+	content: "\e011";
+}
+.flaticon-menu9:before {
+	content: "\e012";
+}
+.flaticon-minus24:before {
+	content: "\e013";
+}
+.flaticon-money57:before {
+	content: "\e014";
+}
+.flaticon-open131:before {
+	content: "\e015";
+}
+.flaticon-pencil113:before {
+	content: "\e016";
+}
+.flaticon-pencil44:before {
+	content: "\e017";
+}
+.flaticon-picture11:before {
+	content: "\e018";
+}
+.flaticon-plus33:before {
+	content: "\e019";
+}
+.flaticon-plus38:before {
+	content: "\e01a";
+}
+.flaticon-profile11:before {
+	content: "\e01b";
+}
+.flaticon-profile7:before {
+	content: "\e01c";
+}
+.flaticon-radio51:before {
+	content: "\e01d";
+}
+.flaticon-search100:before {
+	content: "\e01e";
+}
+.flaticon-seo2:before {
+	content: "\e01f";
+}
+.flaticon-simple30:before {
+	content: "\e020";
+}
+.flaticon-simple31:before {
+	content: "\e021";
+}
+.flaticon-small58:before {
+	content: "\e022";
+}
+.flaticon-text151:before {
+	content: "\e023";
+}
+.flaticon-verified10:before {
+	content: "\e024";
+}

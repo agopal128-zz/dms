@@ -1,0 +1,220 @@
+﻿<form id="counter-measure" role="form" novalidate>
+        <div class="popup-wrapper" ng-if="ctrl.iseditableView">
+        <div class="popup">
+            <div class="popup-content">
+                    <h3 class="font-bold" data-ng-if="!ctrl.metricOptions">{{ctrl.actualData.metricName}}</h3>
+                <div class="content-top">
+                    <div class="row" data-ng-if="!ctrl.isEditFromTable && !ctrl.metricOptions">
+                        <div class="goal col-xs-5">
+                            <h6 class="font-bold">Goal</h6>
+                                <h3><small>{{ctrl.actualData.goalValue | metricType:ctrl.actualData.metricDataTypeId}}</small></h3>
+                        </div>
+                        <div class="date col-xs-7">
+                                <h5><small>{{ctrl.actualData.date|date:'fullDate'}}</small></h5>
+                        </div>
+                    </div>
+                    <div class="counter-alert">
+                        <span ng-hide="ctrl.isEditFromTable || ctrl.metricOptions">
+                            <i class="fa fa-exclamation"></i>
+                            <span>Goal not met</span>
+                        </span>
+                    </div>
+                    <hr data-ng-if="!ctrl.metricOptions">
+                </div>
+                <div class="row" data-ng-if="ctrl.metricOptions">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Metric</label>
+                                <select class="form-control select" name="metric" id="metric" ng-model="ctrl.actualData.metricId"
+                                    data-ng-options="item.id as item.name for item in ctrl.metricOptions | orderBy:'name'"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-ng-if="ctrl.counterMeasurePriority">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Priority</label>
+                            <select class="form-control select" name="priority" id="priority" ng-model="ctrl.priority"
+                                    data-ng-options="item.id as item.name for item in ctrl.counterMeasurePriority"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Issue</label>
+                            <input type="text" class="form-control" id="issue" ng-model="ctrl.issue"
+                                   ng-disabled="ctrl.isEditFromTable" maxlength="300">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Action</label>
+                            <input type="text" class="form-control" id="action" ng-model="ctrl.action"
+                                   maxlength="300">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Who</label>
+                            <tags-input class="tagsInput" ng-model="ctrl.assignedTo" ng-class="{'has-tags': ctrl.assignedTo.length}"
+                                        display-property="fullName"
+                                        key-property="accountName"
+                                        min-length="1"
+                                        max-tags="1"
+                                        min-tags="0"
+                                        add-from-autocomplete-only="true"
+                                        placeholder="Add"
+                                        enforce-max-tags>
+                                <auto-complete source="ctrl.loadTags($query)"
+                                               min-length="3"
+                                               max-results-to-show="{{ctrl.seletedListCount}}">
+                                </auto-complete>
+                            </tags-input>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Due Date</label>
+                                <date-picker date-model="ctrl.dueDate"
+                                             date-options="ctrl.dateOptions" opened="ctrl.startDateOpened" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6" ng-if="ctrl.isEditFromTable">
+                        <div class="form-group">
+                            <label>Opened Date</label>
+                            <date-picker date-model="ctrl.openedDate"
+                                         date-options="ctrl.dateOptions" is-disabled="true" opened="ctrl.endDateOpened"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-if="ctrl.isEditFromTable">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                                <label ng-if="ctrl.comment.length">Comments</label>
+                            <ol>
+                                <li data-ng-repeat="cm in ctrl.comment track by $index">{{cm}}</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Comment</label>
+                            <textarea rows="3" class="form-control" ng-model="ctrl.newComment" style="resize:none;" maxlength="4000"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Status</label>
+                                <div id="status" class="status" ng-class="{statusnoprogress:ctrl.status===0,statusinvestigation:ctrl.status===1,statusidentified:ctrl.status===2,statusimplemented:ctrl.status===3,statusconfirmed:ctrl.status===4}"
+                                      ng-model="ctrl.status" ng-click="ctrl.changeStatus()">
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="popup-bottom">
+                <a class="btn btn-default button-cancel" data-ng-if="!ctrl.actualData.outstandingCounterMeasureExists" data-ng-click="ctrl.cancel()">Cancel</a>
+                <button class="btn btn-default button-cancel button-countermeasure" 
+                   ng-if="ctrl.actualData.outstandingCounterMeasureExists" data-ng-init="ctrl.isCounterMeasureSaveDisabled = false"
+                    data-ng-disabled="ctrl.isCounterMeasureSaveDisabled"
+                   ng-click="ctrl.isCounterMeasureSaveDisabled=true;ctrl.skipClick()">Countermeasure Already Exists</button>
+                
+                <button class="btn button-save" data-ng-init="ctrl.isCounterMeasureSaveDisabled = false"
+                        data-ng-click="ctrl.isCounterMeasureSaveDisabled=true;ctrl.saveCounterMeasure(counterMeasure)"
+                         data-ng-disabled="ctrl.isCounterMeasureSaveDisabled">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="popup-wrapper" data-ng-if="!ctrl.iseditableView" id="editComments">
+    <div class="popup">
+        <div class="popup-content">
+            <h3 class="font-bold">{{ctrl.actualData.metricName}}</h3>
+            <div class="content-top">
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Date Opened</label>
+                        <p>{{ctrl.openedDate|date:'fullDate'}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <p>{{ctrl.priorityName}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Issue</label>
+                        <p>{{ctrl.issue}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Action</label>
+                        <p>{{ctrl.action}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label data-ng-if="ctrl.comment.length">Comments</label>
+                        <ol>
+                            <li data-ng-repeat="cm in ctrl.comment track by $index">{{cm}}</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Who</label>
+                        <input type="text" class="form-control" value="{{ctrl.assignedTo}}" ng-disabled="true">
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Due Date</label>
+                        <date-picker date-model="ctrl.dueDate" is-disabled="true"
+                                     date-options="ctrl.dateOptions" opened="ctrl.startDateOpened" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <div class="status" ng-class="{statusnoprogress:ctrl.status===0,statusinvestigation:ctrl.status===1,statusidentified:ctrl.status===2,statusimplemented:ctrl.status===3,statusconfirmed:ctrl.status===4}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-bottom">
+            <a class="btn btn-default button-cancel" ng-click="ctrl.cancel()">Close</a>
+        </div>
+    </div>
+</div>
+
+

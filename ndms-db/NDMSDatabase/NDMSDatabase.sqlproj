@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>NDMSDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{89cd7b35-dbb3-403e-a4f7-045c49a2f6f9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>NDMSDatabase</RootNamespace>
+    <AssemblyName>NDMSDatabase</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <DefaultSchema>ndms</DefaultSchema>
+    <GenerateCreateScript>True</GenerateCreateScript>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="ndms\" />
+    <Folder Include="ndms\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Post-Deployment" />
+    <Folder Include="ndmshistory" />
+    <Folder Include="ndmshistory\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="ndms\Tables\BusinessSegments.sql" />
+    <Build Include="ndms\Tables\Divisions.sql" />
+    <Build Include="ndms\Tables\ProductLines.sql" />
+    <Build Include="ndms\Tables\Facilities.sql" />
+    <Build Include="ndms\Tables\Departments.sql" />
+    <Build Include="ndms\Tables\ScorecardKPIOwners.sql" />
+    <Build Include="ndms\Tables\Scorecards.sql" />
+    <Build Include="ndms\Tables\KPIs.sql" />
+    <Build Include="ndms\Tables\Processes.sql" />
+    <Build Include="ndms\Tables\ScorecardTeams.sql" />
+    <Build Include="ndms\Tables\Metrics.sql" />
+    <Build Include="ndms\Tables\DailyTargets.sql" />
+    <Build Include="ndms\Tables\MonthlyTargets.sql" />
+    <Build Include="ndms\Tables\Targets.sql" />
+    <Build Include="ndms\Tables\MetricMappings.sql" />
+    <Build Include="ndms\Tables\ScorecardKPI.sql" />
+    <Build Include="Security\ndms.sql" />
+    <Build Include="ndms\Tables\Users.sql" />
+    <Build Include="ndms\Tables\GoalTypes.sql" />
+    <Build Include="ndms\Tables\DataTypes.sql" />
+    <Build Include="ndms\Tables\Years.sql" />
+    <Build Include="ndms\Tables\RollupMethods.sql" />
+    <Build Include="ndms\Tables\CounterMeasures.sql" />
+    <Build Include="ndms\Tables\CounterMeasureStatus.sql" />
+    <Build Include="ndms\Tables\CounterMeasureComments.sql" />
+    <Build Include="ndms\Tables\DailyActuals.sql" />
+    <Build Include="ndms\Tables\YearToDateActuals.sql" />
+    <Build Include="ndms\Tables\MonthlyActuals.sql" />
+    <Build Include="ndmshistory\Tables\DailyTargetsHistory.sql" />
+    <Build Include="ndmshistory\Tables\MonthlyTargetsHistory.sql" />
+    <Build Include="ndmshistory\Tables\TargetsHistory.sql" />
+    <Build Include="Security\ndmshistory.sql" />
+    <Build Include="ndmshistory\Tables\DailyActualsHistory.sql" />
+    <Build Include="ndms\Tables\GraphPlottingMethods.sql" />
+    <Build Include="ndms\Tables\TrackingMethods.sql" />
+    <Build Include="ndmshistory\Tables\MonthlyActualsHistory.sql" />
+    <Build Include="ndms\Tables\TargetEntryMethods.sql" />
+    <Build Include="ndms\Tables\CounterMeasurePriority.sql" />
+    <Build Include="ndms\Tables\Recordables.sql" />
+    <Build Include="ndms\Tables\HolidayPatterns.sql" />
+    <Build Include="ndms\Tables\HolidayPatternInfo.sql" />
+    <Build Include="ndms\Tables\ScorecardWorkdayTracker.sql" />
+    <Build Include="ndms\Tables\ScorecardWorkdayPatterns.sql" />
+    <Build Include="ndms\Tables\ScorecardHolidayPatterns.sql" />
+    <Build Include="ndms\Tables\ScorecardBusinessSegments.sql" />
+    <Build Include="ndms\Tables\ScorecardDivisions.sql" />
+    <Build Include="ndms\Tables\ScorecardDepartments.sql" />
+    <Build Include="ndms\Tables\ScorecardFacilities.sql" />
+    <Build Include="ndms\Tables\ScorecardProcesses.sql" />
+    <Build Include="ndms\Tables\ScorecardProductLines.sql" />
+    <Build Include="ndms\Tables\OrganizationalData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Post-Deployment\Insert_Reference_Data.sql" />
+    <None Include="Scripts\Post-Deployment\Insert_User_Data.sql" />
+    <None Include="Scripts\Post-Deployment\Update_Reference_Data.sql" />
+    <None Include="Scripts\Post-Deployment\Insert_100Year_Data.sql" />
+    <None Include="NDMSDatabase-Local.publish.xml" />
+    <None Include="NDMSDatabase-QA.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="NDMSDatabase.refactorlog" />
+  </ItemGroup>
+</Project>

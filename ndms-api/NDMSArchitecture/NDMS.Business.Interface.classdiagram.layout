@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="NDMS.Business.Interface">
+  <logicalClassDesignerModelMoniker Id="6aff35e7-92e6-4c3a-ac88-6182b2828ff9" />
+  <nestedChildShapes>
+    <interfaceShape Id="ecff3f67-7244-49d5-92da-f489fc1defb0" absoluteBounds="4, 1.25, 3.375, 1.5429687152306237" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="c6167234-18fd-4e89-ba80-872baaed9458" LastKnownName="IScorecardManager" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="1acbff7d-cd7c-4274-8aa2-c8b03ba6d33f" absoluteBounds="4.015, 1.6400000000000001, 3.3449999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="8c7e6aca-55f0-43ce-9ad6-4516297c2484" absoluteBounds="4.015, 1.8511718675494193, 3.3449999999999998, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+    <interfaceShape Id="ad27b656-16fa-44ea-bc8a-a52cad17b584" absoluteBounds="0.75, 1.25, 2.875, 1.7031249602635703" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="2e5d9d97-2beb-48d0-80ec-a35db4719722" LastKnownName="IMetricManager" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="d338a076-e2b4-49c8-ad97-c0b75e112f42" absoluteBounds="0.765, 1.6400000000000001, 2.8449999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="74f9bb87-bd94-417b-88bd-dda55fc2186c" absoluteBounds="0.765, 1.8511718675494193, 2.8449999999999998, 1.0019530927141509" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NDMSDatabase/.vs/NDMSDatabase/v14/.suo
+/NDMSDatabase/bin/Debug
+/NDMSDatabase/obj/Debug

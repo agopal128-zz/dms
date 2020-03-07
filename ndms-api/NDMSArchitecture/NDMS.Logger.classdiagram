@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="f14191f1-a360-4f2c-9786-edc57b311e68" name="NDMS.Logger" linkedPackageId="1c9d1079-507b-488b-b7bc-a31ef61a3025" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="77c15ab8-5133-4c4a-b656-f16dcb988b26">
+      <profileInstance Id="6d10a4bd-98a3-449a-ace7-9fa7696c4119" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="52faf062-ae59-4cee-9f06-c6ed99d342c3">
+      <profileInstance Id="59469e94-d609-4b27-b14b-64e2020cd5f1" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="f71edec6-40e2-48a2-a80f-f1089de18f3d" name="ILogger" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b6beeb4b-4995-4d0e-a493-99ab30d280e5" />
+        <suppliersInternal>
+          <dependency Id="48109131-0843-4579-bfee-e14269c49c28">
+            <enumerationMoniker Id="9decde20-4679-4d9f-9832-9c70370b3951" LastKnownName="LogLevelEnum" />
+            <elementDefinition Id="ac66643d-e032-48f1-80cb-e82daeca91a3" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperations>
+          <operation Id="d9cab9e4-36ff-4228-9286-b24c8aff5e84" name="Log" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1d15243d-4365-4546-8387-b78fa81c5f67" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3a1f6ce9-4db8-4ecb-81f8-a267bb431aae" name="message" direction="In">
+                  <elementDefinition Id="7fa685f4-e3a0-4e33-b826-097a22149696" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="feced963-31a5-4bac-af99-5d9e1d2e7c1c" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="db63cc46-60f8-44c7-b884-c09ab4da0bb7" name="loglevel" direction="In">
+                  <elementDefinition Id="152b0dbe-726c-4b1b-9ca4-b04b8a339c0f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8a36db17-7abe-405a-b2b7-18c839a4f58b" LastKnownName="LogLevelEnum" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="836bef48-34e5-44be-abd2-1b7c281177de" name="Log" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fe5a1df4-1445-4af0-b4d6-70044669422d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="16321c8d-a008-47e8-9616-610708feb79e" name="message" direction="In">
+                  <elementDefinition Id="0ed36e4c-077c-4daf-bb1a-733c12f0db9e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cbe465e8-9bb4-47a4-840a-3e038c7f9396" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2e0011c1-7567-4f1b-a432-a88858ca4621" name="loglevel" direction="In">
+                  <elementDefinition Id="60b606e4-512a-481e-bcbb-b0fc2fc09795" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="31a89d45-ce30-4ab4-bd2b-ef0fd20c2ba1" LastKnownName="LogLevelEnum" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="951e84f6-0734-4b58-84ed-1d4763c5934f" name="ex" direction="In">
+                  <elementDefinition Id="a1b6add2-ff0a-422e-95e9-466158de0a36" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6305a624-d187-41f4-a5f2-6871efffef91" LastKnownName="Exception" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="9decde20-4679-4d9f-9832-9c70370b3951" name="LogLevelEnum" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2ee59f36-47c1-4ba7-9632-475d1d77ab2d" />
+        <ownedLiterals>
+          <enumerationLiteral Id="9dc9d14f-f081-442b-b95d-fe35e83e421f" name="Debug">
+            <elementDefinition Id="7d2db245-0df5-4673-b3b0-4a8f70f28dfa" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="63edb482-eff7-4fbc-b0f1-1bdf2860c525" name="Information">
+            <elementDefinition Id="bc7a8513-b00b-44c4-8a33-79518a631ab3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="0b5340b5-8590-42f7-8466-54f6e9f9fe57" name="Warning">
+            <elementDefinition Id="60688e2f-bd65-4786-b96e-fd528a282ef2" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="3d92ef4e-0168-4540-8b57-06ea78f4a96c" name="Error">
+            <elementDefinition Id="b506cadf-e73d-48c0-9c0f-e4ef3a1d8395" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="b46094a8-9814-4118-beec-fad636eb3661" name="Fatal">
+            <elementDefinition Id="eebf2df4-674f-4cc6-a9f8-3ba5fb42f802" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="feced963-31a5-4bac-af99-5d9e1d2e7c1c" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8a36db17-7abe-405a-b2b7-18c839a4f58b" name="LogLevelEnum" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::LogLevelEnum">
+        <elementDefinition Id="2ee59f36-47c1-4ba7-9632-475d1d77ab2d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cbe465e8-9bb4-47a4-840a-3e038c7f9396" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="31a89d45-ce30-4ab4-bd2b-ef0fd20c2ba1" name="LogLevelEnum" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::LogLevelEnum">
+        <elementDefinition Id="2ee59f36-47c1-4ba7-9632-475d1d77ab2d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6305a624-d187-41f4-a5f2-6871efffef91" name="Exception" isAbstract="false" isLeaf="false" cachedFullName="Exception">
+        <elementDefinition Id="80404c93-0c70-4c62-a4a6-bc0d3c7a1d37" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="24524a87-c6e1-4970-bffc-7c9bafe31b0b" name="Log4NetLogger" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="581f9020-451c-4d53-a036-2c2f0607ce4b" />
+        <suppliersInternal>
+          <interfaceRealization Id="617a7e56-8f37-432c-950c-5db1abb962f2">
+            <interfaceMoniker Id="f71edec6-40e2-48a2-a80f-f1089de18f3d" LastKnownName="ILogger" />
+            <elementDefinition Id="31340766-fc33-48fa-b234-abc50d3bcb3a" />
+          </interfaceRealization>
+          <dependency Id="875a8981-636b-4fdc-b908-6dffe389e882">
+            <enumerationMoniker Id="9decde20-4679-4d9f-9832-9c70370b3951" LastKnownName="LogLevelEnum" />
+            <elementDefinition Id="b5668f7b-4ed0-482f-ba82-02681661928c" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="6a863269-3e04-480e-94e9-2298171160dd" name="Log" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="03cc90d2-c126-43f5-a79e-b5480a13943b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3afa5a12-f29f-4acf-a793-beb2a7e202e4" name="message" direction="In">
+                  <elementDefinition Id="c6bf03ee-3b61-4678-842f-718ba5de74bf" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="feced963-31a5-4bac-af99-5d9e1d2e7c1c" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f0af6b12-516e-4b3f-8a50-dfafa1a6bafa" name="loglevel" direction="In">
+                  <elementDefinition Id="08ca59d2-f310-4632-80b7-ccdef8b6161b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8a36db17-7abe-405a-b2b7-18c839a4f58b" LastKnownName="LogLevelEnum" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2ffe5b7e-0843-4848-85b9-0645e71f3b06" name="Log" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="11f37802-b89c-4fc4-bba2-1cac70b0d4ec" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="823b65d8-ffef-4285-be1b-295bab02d248" name="message" direction="In">
+                  <elementDefinition Id="bef1f008-30fe-44b0-853c-0ef5bfb8f687" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="feced963-31a5-4bac-af99-5d9e1d2e7c1c" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f55dda1a-8ae4-4851-83a6-86adf5178734" name="loglevel" direction="In">
+                  <elementDefinition Id="ab8e15fb-1461-455e-a9bd-8310af2c785b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8a36db17-7abe-405a-b2b7-18c839a4f58b" LastKnownName="LogLevelEnum" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="516732ab-37d5-45bf-b8b1-df197ae41fdb" name="ex" direction="In">
+                  <elementDefinition Id="19a70fc0-3c34-49d4-b768-31805ffae725" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6305a624-d187-41f4-a5f2-6871efffef91" LastKnownName="Exception" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8c8f21ac-7b36-4840-beec-ee4526b4135b" name="LogManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="431e7e3b-6e9d-4bd5-87da-922d475b38b6" />
+        <targetEnds>
+          <association Id="3527eb24-2004-4641-a341-2da1960a9fd4" isDerived="false" sourceEndRoleName="LogManager" targetEndRoleName="Log4NetLogger" isLeaf="false" isAbstract="false">
+            <classMoniker Id="24524a87-c6e1-4970-bffc-7c9bafe31b0b" LastKnownName="Log4NetLogger" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b017b0dc-9775-4626-9d69-afb16acc6db1" name="LogManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="27c1cce4-644d-4d13-8f52-43f5d1912cb5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3b2bc45a-6e6d-4f29-af11-365aa00996dd" name="Log4NetLogger" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="d3c5a709-7e33-48b1-ab96-9d653d2326c6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8d211779-9ff0-4f40-88d5-4d2ff8a2eb8d" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="21343ef1-022f-4fa1-8713-94b6a9980e50" name="Instance" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d06301b8-95b0-46bc-900b-39986828a16d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="abb6beea-d0b9-4c97-ad3b-4e45eb1b1a33" LastKnownName="ILogger" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="2895d70a-ab8b-4fc2-8ea7-f4b43f402e1a" name="GetLoggerInstance" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ada03712-aaa1-4943-8766-ed560e939e62" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="edf0f1cd-d898-4a26-bcea-debf2b43e044" direction="Return">
+                  <elementDefinition Id="9302d81e-22b1-41bd-883e-faa5ff823561" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c28e8f06-484c-4808-a735-1547525e5329" LastKnownName="ILogger" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="abb6beea-d0b9-4c97-ad3b-4e45eb1b1a33" name="ILogger" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::ILogger">
+        <elementDefinition Id="b6beeb4b-4995-4d0e-a493-99ab30d280e5" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c28e8f06-484c-4808-a735-1547525e5329" name="ILogger" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::ILogger">
+        <elementDefinition Id="b6beeb4b-4995-4d0e-a493-99ab30d280e5" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="1c9d1079-507b-488b-b7bc-a31ef61a3025" name="NDMSArchitecture">
+    <elementDefinition Id="96a75835-c6f4-4826-a1da-56ff1d3a7694" />
+  </package>
+</logicalClassDesignerModel>

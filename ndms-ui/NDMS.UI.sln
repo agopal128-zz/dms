@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDMS.UI", "NDMS.UI\NDMS.UI.csproj", "{B590F268-6B0A-4B4B-8EA9-914980246571}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B590F268-6B0A-4B4B-8EA9-914980246571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B590F268-6B0A-4B4B-8EA9-914980246571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B590F268-6B0A-4B4B-8EA9-914980246571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B590F268-6B0A-4B4B-8EA9-914980246571}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.6.7.12:7777/tfs/defaultcollection
+		SccProjectUniqueName0 = NDMS.UI\\NDMS.UI.csproj
+		SccProjectName0 = NDMS.UI
+		SccAuxPath0 = http://10.6.7.12:7777/tfs/defaultcollection
+		SccLocalPath0 = NDMS.UI
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

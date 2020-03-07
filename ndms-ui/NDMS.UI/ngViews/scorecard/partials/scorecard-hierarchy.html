@@ -1,0 +1,28 @@
+﻿<div>
+    <div class="legend pull-right">       
+            <div class="legend-item-status">
+                <a class="legend-scorecard-achieved"></a>All Metrics Green
+            </div>
+            <div class="legend-item-status">
+                <a class="legend-scorecard-not-achieved"></a>Primary Red
+            </div>
+            <div class="legend-item-status">
+                <a class="legend-scorecard-partially-achieved"></a>Secondary Red
+            </div>
+            <div class="legend-item-status">
+                <a class="legend-scorecard-inactive"></a> Inactive
+            </div>
+        <div class="legend-item">
+            <img src="Images/recordable.png" height="15px" width="15px" /># of Days since last recordable
+        </div>
+    </div>
+    <div id="tree">
+        <hierarchy-chart data-hierarchy-data="ctrl.hierarchyData" data-show-active-only="ctrl.showOnlyActiveScorecards" data-is-root-node-inactive="ctrl.isRootNodeInactive"></hierarchy-chart>
+    </div>
+    <div class="scorecard-content" ng-if="ctrl.isRootNodeInactive && ctrl.showOnlyActiveScorecards">
+        <div class="info">
+            <img src="Images/info.png">
+            <h4> No Data Available!</h4><h6></h6>
+        </div>
+    </div>
+</div>

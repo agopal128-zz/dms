@@ -1,0 +1,25 @@
+﻿<div class="row">
+    <div class="col-sm-3">
+        <div class="btn-back-main">
+            <a ng-click="ctrl.goBack()"><i class="fa fa-arrow-circle-left"></i></a>
+        </div>
+    </div>
+    <div class="current-year col-sm-offset-5">
+        <div class="month-select year-select pull-left">
+            <a class="prev" ng-click="ctrl.loadPreviousYear()"><i class="fa fa-chevron-left"></i></a>
+            <ul>
+                <li>{{ctrl.selectedYear}}</li>
+            </ul>
+            <a class="next" ng-click="ctrl.loadNextYear()"><i class="fa fa-chevron-right"></i></a>
+        </div>
+    </div>
+    <div class="save-holidays col-sm-offset-4">
+        <div class="pull-right">
+            <button class="btn button-add" ng-click="ctrl.updateHolidays()">Save</button>
+        </div>
+    </div>
+</div>
+<form>
+    <full-year-calendar year="ctrl.selectedYear" events="ctrl.holidayPattern.holidaysList"
+                        last-change="ctrl.lastChange" mark-event="ctrl.markOrUnmarkHoliday(date)" options="ctrl.calendarOptions"></full-year-calendar>
+</form>

@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="06b586ec-eef8-4699-a83d-8b083d8dc77f" name="NDMS.Apis" linkedPackageId="174b0741-406c-436c-b486-d5c556f7f02e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="4e2a2e6b-89c9-4b55-9bc2-056c057ab2db">
+      <profileInstance Id="17a62e74-25f0-4388-809d-fdca297e70e5" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3e1ebe91-a4d2-4b40-9506-4a220a2b968b">
+      <profileInstance Id="27d24011-e09d-4f8e-b20d-1e571dfb6b0a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9f22df74-6748-4aa8-9ee2-01215454c70a" name="System.Web.Http.ApiController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="666fee1e-7f4e-46b7-a7f8-49a20c9b3bf3" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c88f7da0-2154-48d5-8516-b7d472175c23" name="BaseController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bd1b79d6-44fa-4444-b290-8732edbb96ff" />
+        <generalsInternal>
+          <generalization Id="6b4ce27e-849c-4c34-96da-9a26ad71a3a4" isSubstitutable="false">
+            <classMoniker Id="9f22df74-6748-4aa8-9ee2-01215454c70a" LastKnownName="System.Web.Http.ApiController" />
+            <elementDefinition Id="c87be285-bf81-4def-a810-124877c85aaf" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="cd60ab89-3c68-4d97-b505-53fcc50a755a" name="CheckModelState" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ff1b6786-51d4-4bad-8e8f-1117ecfd620b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="505ead8a-5542-43ec-bb01-a29c33f1b7cc" name="ScorecardController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1f80822d-043f-4676-af59-42c70fe1897f" />
+        <generalsInternal>
+          <generalization Id="865b6a35-e5c5-48a9-95cf-6715b83790a7" isSubstitutable="false">
+            <classMoniker Id="c88f7da0-2154-48d5-8516-b7d472175c23" LastKnownName="BaseController" />
+            <elementDefinition Id="c3f6c062-cae3-4313-915e-2f87af00a81f" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="76188484-9d23-404f-af9b-c34a42e50f53" name="GetScorecard" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d09ccb31-7ec4-4175-935c-fb47d568cfc4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c9cedd9a-23ff-4ba0-956b-2de92b347dec" direction="Return">
+                  <elementDefinition Id="99fda540-2ed1-4608-998e-a5787d5f6466" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2b428239-22f6-48e3-b3d3-d291cfaa0f96" LastKnownName="IHttpActionResult" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="ce5c902a-d9a7-4c7e-876d-04d467cc177a" name="Add" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c8d2acc9-af0b-4d85-969d-b31ffd4c93c7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b2e63852-0d03-481b-9323-f1b07b0d1b2a" direction="Return">
+                  <elementDefinition Id="f18fd506-cd06-4b77-aafc-0947de871687" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="461f2440-24ec-43a5-bb92-0678256ce5a4" LastKnownName="IHttpActionResult" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2d9d8565-234d-4bfe-8740-ab5b9eca197f" name="scorecardRequest" direction="In">
+                  <elementDefinition Id="1e7fd0fd-584d-4782-9d86-c7e4438892eb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="aeb0aeb8-73e2-49c6-9ea1-dfbba9f59dd6" LastKnownName="ScorecardItem" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9388e924-c274-4255-9158-c3ead48fca4d" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="894f5405-5c12-4b37-b9e9-3f11c4b806f9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="69101468-3534-42e4-aa39-42c74a216ee6" direction="Return">
+                  <elementDefinition Id="7e9ef8e3-49ff-42b3-a360-be67a052b69d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4029369e-5e05-4d02-8f8f-098a36b184b5" LastKnownName="IHttpActionResult" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="06cd4b97-c258-48df-b647-7ebdfb56e542" name="scorecardRequest" direction="In">
+                  <elementDefinition Id="fc2fd69e-dbe1-4d8d-993a-6719d6a59984" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d707dfb7-f43b-43c5-916e-ae01050d1ddc" LastKnownName="ScorecardItem" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="cf67fa94-b844-4959-be5d-0c74ec9f224e" name="GetScorecardHierarchy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f1031d85-02e6-4a7a-b4d5-284f31f51a8d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2d1da297-29c3-494f-8ab2-c19cad932b00" direction="Return">
+                  <elementDefinition Id="284c3945-3132-4ef3-b4c8-a18389f88a3e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e67aba92-a154-4997-98f1-7b6697354f44" LastKnownName="IHttpActionResult" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9b5e5c35-5ba3-4ca2-b9d5-8fff4aa87e88" name="MetricController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a103618f-ccd6-4bed-a3ac-4cf75f44fbe0" />
+        <generalsInternal>
+          <generalization Id="f98f158f-2cc5-4218-a62e-4208fbfb4f8c" isSubstitutable="false">
+            <classMoniker Id="c88f7da0-2154-48d5-8516-b7d472175c23" LastKnownName="BaseController" />
+            <elementDefinition Id="e1c04cb9-16fe-4984-b7b8-f4c449ec363f" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="e0014af5-c929-48e6-8099-062be75ecc13" name="GetAll" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4b3f5a33-1493-4637-b5ac-3640a534258a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="223bbb3e-6943-4bf0-b5d3-0aa4dc2e6642" direction="Return">
+                  <elementDefinition Id="0e336b3c-7601-43b1-84a4-f9a038f6071a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1f41ee1d-27c9-497c-8886-9ac281fab194" LastKnownName="IHttpActionResult" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="68d2027f-7c9c-475c-979b-697ad8094c99" name="Get" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4f30ee18-1bb5-4ad5-a793-c376b2857dad" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5e2a1bf0-141b-488b-b003-406aa8030269" name="id" direction="In">
+                  <elementDefinition Id="2afe1c26-bd53-4ce3-9c6e-f73a4c7c28fd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2c32802e-5cae-4771-96be-64b92f5e67f5" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f02b6318-9f5d-47e9-b190-412fa97c7bf3" direction="Return">
+                  <elementDefinition Id="23874b58-0092-4e03-98d1-11a3389467f7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d10b6a23-32dc-4fe1-9d72-cf154d8cee00" LastKnownName="IHttpActionResult" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="80005242-3f76-4161-b1c5-c5608b3553e4" name="GetMetricTemplateData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9d4db6de-f8d1-406f-bfd6-92c179a88e89" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f5cd555d-bae9-4bc0-b67e-585994da1037" direction="Return">
+                  <elementDefinition Id="0e633659-75a9-4d53-939d-a100585409c6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87ff5572-8c5d-4ce2-b911-c55115ed5085" LastKnownName="IHttpActionResult" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bb3d099d-654f-4635-b6ca-2625d9c01462" name="Add" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c02c768e-fc89-4ff8-9274-64582fbe198e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d4a799a9-ec24-4836-b26c-8b824cd8c72d" name="metricRequest" direction="In">
+                  <elementDefinition Id="ce5c4962-6a25-4f2e-83f0-07a76db41d5e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fe5b31f1-568a-4de0-a335-0e29bf05b0be" LastKnownName="MetricItem" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2b428239-22f6-48e3-b3d3-d291cfaa0f96" name="IHttpActionResult" isAbstract="false" isLeaf="false" cachedFullName="IHttpActionResult">
+        <elementDefinition Id="7de4b9a7-d42b-4e0b-9d68-1bd3e206b1e8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="461f2440-24ec-43a5-bb92-0678256ce5a4" name="IHttpActionResult" isAbstract="false" isLeaf="false" cachedFullName="IHttpActionResult">
+        <elementDefinition Id="7de4b9a7-d42b-4e0b-9d68-1bd3e206b1e8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="aeb0aeb8-73e2-49c6-9ea1-dfbba9f59dd6" name="ScorecardItem" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::ScorecardItem">
+        <elementDefinition Id="61c81a63-68fe-4c72-b4f5-1a0ec1441a6f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4029369e-5e05-4d02-8f8f-098a36b184b5" name="IHttpActionResult" isAbstract="false" isLeaf="false" cachedFullName="IHttpActionResult">
+        <elementDefinition Id="7de4b9a7-d42b-4e0b-9d68-1bd3e206b1e8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d707dfb7-f43b-43c5-916e-ae01050d1ddc" name="ScorecardItem" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::ScorecardItem">
+        <elementDefinition Id="61c81a63-68fe-4c72-b4f5-1a0ec1441a6f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e67aba92-a154-4997-98f1-7b6697354f44" name="IHttpActionResult" isAbstract="false" isLeaf="false" cachedFullName="IHttpActionResult">
+        <elementDefinition Id="7de4b9a7-d42b-4e0b-9d68-1bd3e206b1e8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1f41ee1d-27c9-497c-8886-9ac281fab194" name="IHttpActionResult" isAbstract="false" isLeaf="false" cachedFullName="IHttpActionResult">
+        <elementDefinition Id="7de4b9a7-d42b-4e0b-9d68-1bd3e206b1e8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2c32802e-5cae-4771-96be-64b92f5e67f5" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d10b6a23-32dc-4fe1-9d72-cf154d8cee00" name="IHttpActionResult" isAbstract="false" isLeaf="false" cachedFullName="IHttpActionResult">
+        <elementDefinition Id="7de4b9a7-d42b-4e0b-9d68-1bd3e206b1e8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="87ff5572-8c5d-4ce2-b911-c55115ed5085" name="IHttpActionResult" isAbstract="false" isLeaf="false" cachedFullName="IHttpActionResult">
+        <elementDefinition Id="7de4b9a7-d42b-4e0b-9d68-1bd3e206b1e8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fe5b31f1-568a-4de0-a335-0e29bf05b0be" name="MetricItem" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::MetricItem">
+        <elementDefinition Id="f78d8dc3-7f1a-4caa-b5b5-641cd5740971" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="174b0741-406c-436c-b486-d5c556f7f02e" name="NDMSArchitecture">
+    <elementDefinition Id="96a75835-c6f4-4826-a1da-56ff1d3a7694" />
+  </package>
+</logicalClassDesignerModel>

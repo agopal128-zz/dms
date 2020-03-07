@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="f3bf70ac-b400-4c1f-8034-d5681eb4022e" ChangeDateTime="02/26/2016 08:33:41">
+    <Property Name="ElementName" Value="[ndms].[Years].[IsClosed]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ndms].[Years]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IsActive" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a7dae784-6788-49cf-9517-0bc5bc64261a" ChangeDateTime="02/26/2016 13:13:31">
+    <Property Name="ElementName" Value="[ndms].[CounterMeasureStatus].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ndms].[CounterMeasureStatus]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Status" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3787a37d-1db3-4c1e-b881-a8afee13e4fb" ChangeDateTime="03/04/2016 07:02:23">
+    <Property Name="ElementName" Value="[ndms].[Targets].[StartDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ndms].[Targets]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EffectiveStartDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3328931c-8bc1-4951-99f4-c2b1a90b673c" ChangeDateTime="03/04/2016 07:02:30">
+    <Property Name="ElementName" Value="[ndms].[Targets].[EndDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ndms].[Targets]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EffectiveEndDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ce5cbb2b-16eb-41ba-b1a9-2e37f284db2d" ChangeDateTime="10/25/2016 05:23:11">
+    <Property Name="ElementName" Value="[ndms].[TargetEntryMethod].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ndms].[TargetEntryMethod]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d64e8d4b-ae82-4906-8a7a-e10a5235b080" ChangeDateTime="12/20/2016 05:34:10">
+    <Property Name="ElementName" Value="[ndms].[CounterMeasureClassifications].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ndms].[CounterMeasureClassifications]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0a0c973a-f6d5-4cc9-bd00-2353f9562d9d" ChangeDateTime="12/30/2016 04:14:51">
+    <Property Name="ElementName" Value="[ndms].[Recordables].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ndms].[Recordables]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ScorecardId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c625a5b6-40e2-4d26-8d83-2aac2c5aad71" ChangeDateTime="01/25/2017 08:50:06">
+    <Property Name="ElementName" Value="[ndms].[HolidayPattern].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ndms].[HolidayPattern]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+</Operations>

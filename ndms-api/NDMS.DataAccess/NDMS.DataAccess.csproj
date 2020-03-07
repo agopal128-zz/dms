@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9861752C-22FB-4B9E-ADED-AE14A25188EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NDMS.DataAccess</RootNamespace>
+    <AssemblyName>NDMS.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="EntityConfig\ADUserConfig.cs" />
+    <Compile Include="EntityConfig\CounterMeasurePriorityConfig.cs" />
+    <Compile Include="EntityConfig\CounterMeasureCommentConfig.cs" />
+    <Compile Include="EntityConfig\CounterMeasureConfig.cs" />
+    <Compile Include="EntityConfig\CounterMeasureStatusConfig.cs" />
+    <Compile Include="EntityConfig\DailyActualHistoryConfig.cs" />
+    <Compile Include="EntityConfig\DailyActualConfig.cs" />
+    <Compile Include="EntityConfig\DailyTargetHistoryConfig.cs" />
+    <Compile Include="DataAccessException.cs" />
+    <Compile Include="EntityConfig\GraphPlottingMethodConfig.cs" />
+    <Compile Include="EntityConfig\HolidayPatternConfig.cs" />
+    <Compile Include="EntityConfig\HolidayPatternInfoConfig.cs" />
+    <Compile Include="EntityConfig\MonthlyActualHistoryConfig.cs" />
+    <Compile Include="EntityConfig\OrganizationalDataConfig.cs" />
+    <Compile Include="EntityConfig\RecordableConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardBusinessSegmentConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardDepartmentConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardDivisionConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardFacilityConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardHolidayPatternConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardProcessConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardProductLineConfig.cs" />
+    <Compile Include="EntityConfig\TargetEntryMethodConfig.cs" />
+    <Compile Include="EntityConfig\TargetHistoryConfig.cs" />
+    <Compile Include="EntityConfig\BusinessSegmentConfig.cs" />
+    <Compile Include="EntityConfig\DailyTargetConfig.cs" />
+    <Compile Include="EntityConfig\MonthlyTargetHistoryConfig.cs" />
+    <Compile Include="EntityConfig\RollupMethodConfig.cs" />
+    <Compile Include="EntityConfig\DataTypeConfig.cs" />
+    <Compile Include="EntityConfig\DepartmentConfig.cs" />
+    <Compile Include="EntityConfig\DivisionConfig.cs" />
+    <Compile Include="EntityConfig\GoalTypeConfig.cs" />
+    <Compile Include="EntityConfig\KPIConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardKPIOwnerConfig.cs" />
+    <Compile Include="EntityConfig\FacilityConfig.cs" />
+    <Compile Include="EntityConfig\MetricConfig.cs" />
+    <Compile Include="EntityConfig\MetricMappingConfig.cs" />
+    <Compile Include="EntityConfig\MonthlyTargetConfig.cs" />
+    <Compile Include="EntityConfig\ProcessConfig.cs" />
+    <Compile Include="EntityConfig\ProductLineConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardTeamConfig.cs" />
+    <Compile Include="EntityConfig\TargetConfig.cs" />
+    <Compile Include="EntityConfig\TrackingMethodConfig.cs" />
+    <Compile Include="EntityConfig\UserConfig.cs" />
+    <Compile Include="EntityConfig\YearConfig.cs" />
+    <Compile Include="Interfaces\IADUserRepository.cs" />
+    <Compile Include="Interfaces\IMetricRepository.cs" />
+    <Compile Include="Interfaces\INDMSUserRepository.cs" />
+    <Compile Include="Interfaces\IScorecardRepository.cs" />
+    <Compile Include="EntityConfig\Base\BaseEntityTypeConfiguration.cs" />
+    <Compile Include="Interfaces\Base\IBaseRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="EntityConfig\MonthlyActualConfig.cs" />
+    <Compile Include="NDMSDataContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ADUserRepository.cs" />
+    <Compile Include="Repositories\Base\BaseRepository.cs" />
+    <Compile Include="Repositories\MetricRepository.cs" />
+    <Compile Include="Repositories\NDMSUserRepository.cs" />
+    <Compile Include="Repositories\ScorecardRepository.cs" />
+    <Compile Include="EntityConfig\ScorecardWorkdayPatternConfig.cs" />
+    <Compile Include="EntityConfig\ScorecardWorkdayTrackerConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NDMS.DomainModel\NDMS.DomainModel.csproj">
+      <Project>{a5d0fdac-d993-420b-9e55-0005a9c43b14}</Project>
+      <Name>NDMS.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NDMS.Helpers\NDMS.Helpers.csproj">
+      <Project>{3020ef50-dbd2-4b9b-8023-9b2351fec937}</Project>
+      <Name>NDMS.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

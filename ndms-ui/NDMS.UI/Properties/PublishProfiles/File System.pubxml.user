@@ -1,0 +1,1392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\NDMSUI</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="401.html">
+      <publishTime>02/20/2017 15:11:19</publishTime>
+    </File>
+    <File Include="404.html">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="bin/NDMS.UI.dll">
+      <publishTime>03/07/2017 15:35:48</publishTime>
+    </File>
+    <File Include="Common/constants.js">
+      <publishTime>03/10/2017 13:24:01</publishTime>
+    </File>
+    <File Include="Common/constants.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="Common/validationHelpers.js">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Common/validationHelpers.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ng-tags-input.bootstrap.min.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ng-tags-input.min.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/select.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/select.min.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ui-bootstrap-csp.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ui-grid.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ui-grid.eot">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ui-grid.min.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ui-grid.svg">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ui-grid.ttf">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Content/ui-grid.woff">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/Flaticon/flaticon.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/Flaticon/flaticon.eot">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/Flaticon/flaticon.html">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/Flaticon/flaticon.svg">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/Flaticon/flaticon.ttf">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/Flaticon/flaticon.woff">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/css/font-awesome.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/css/font-awesome.min.css">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/fonts/fontawesome-webfont.eot">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/fonts/fontawesome-webfont.svg">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/fonts/fontawesome-webfont.ttf">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/fonts/fontawesome-webfont.woff">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/fonts/fontawesome-webfont.woff2">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/fonts/FontAwesome.otf">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/animated.less">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/bordered-pulled.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/core.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/fixed-width.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/font-awesome.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/icons.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/larger.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/list.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/mixins.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/path.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/rotated-flipped.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/stacked.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/less/variables.less">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/font-awesome.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_animated.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_bordered-pulled.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_core.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_fixed-width.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_icons.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_larger.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_list.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_mixins.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_path.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_rotated-flipped.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_stacked.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome/scss/_variables.scss">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/fontello/fontello.eot">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/fontello/fontello.svg">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/fontello/fontello.ttf">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/fontello/fontello.woff">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="fonts/helvetica/HelveticaNeueLTStd-Roman.eot">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/helvetica/HelveticaNeueLTStd-Roman.ttf">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/helvetica/HelveticaNeueLTStd-Roman.woff">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/lato_regular/lato-regular-webfont.svg">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/lato_regular/lato-regular-webfont.woff2">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/lato_regular/lato-regular.eot">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/lato_regular/lato-regular.ttf">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="fonts/lato_regular/lato-regular.woff">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="gulp.config.js">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="gulpfile.js">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Images/401.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/cost.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/cost_blue_small.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/cost_month.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/cost_small.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/delivery.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/delivery_blue_small.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/delivery_month.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/delivery_small.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/dropdown-arrow.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/info.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/innovation.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/innovation_blue_small.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/innovation_month.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/innovation_small.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/imagebrowser.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/markers.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/markers_2x.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/slider-h.gif">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/slider-v.gif">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/sprite.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/sprite_2x.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/sprite_kpi.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/bootstrap/sprite_kpi_2x.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/textures/hue.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/textures/transparency.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/kendo/textures/transtexture.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/logoIcon.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/net_capital.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/net_capital_blue_small.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/net_capital_month.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/net_capital_small.png">
+      <publishTime>02/20/2017 15:11:21</publishTime>
+    </File>
+    <File Include="Images/NOV_WellbDiv_Logo.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/people.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/people_blue_small.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/people_month.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/people_small.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/pie_icon.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/quality.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/quality_blue_small.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/quality_month.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/quality_small.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/recordable.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/recordable_white.png">
+      <publishTime>01/05/2017 17:10:00</publishTime>
+    </File>
+    <File Include="Images/revenue.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/revenue_blue_small.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/revenue_month.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/revenue_small.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/safety.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/safety_blue_small.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/safety_month.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/safety_small.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/slider.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/slider2.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/sprite-skin-flat.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_0.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_1.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_2.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_3.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_4.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_legend_0.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_legend_1.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_legend_2.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_legend_3.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/status_legend_4.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Images/user_white.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Login/index.html">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Login/index.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="Login/loginApp.js">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Login/loginApp.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="Login/main.js">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Login/main.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="Login/novlogo.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Login/NOV_WellbDiv_Logo.png">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Login/style.css">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="Login/style.min.css">
+      <publishTime>03/16/2017 14:03:12</publishTime>
+    </File>
+    <File Include="main.js">
+      <publishTime>03/16/2017 12:52:50</publishTime>
+    </File>
+    <File Include="ngApp/app-menu.config.js">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="ngApp/app-menu.config.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngApp/app.config.js">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="ngApp/app.js">
+      <publishTime>02/20/2017 15:11:22</publishTime>
+    </File>
+    <File Include="ngApp/app.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngControllers/actuals/actuals-controller.js">
+      <publishTime>03/16/2017 12:51:30</publishTime>
+    </File>
+    <File Include="ngControllers/actuals/actuals-controller.min.js">
+      <publishTime>03/16/2017 14:02:53</publishTime>
+    </File>
+    <File Include="ngControllers/actuals/modules/ion.rangeSlider.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/actuals/modules/ion.rangeSlider.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/admin/holiday-pattern-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/admin/holiday-pattern-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/admin/holiday-selector-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/admin/holiday-selector-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/Common/confirmationModalController.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/Common/confirmationModalController.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/counter-measure/counter-measure-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/counter-measure/counter-measure-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/kpIs/drill-down-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/kpIs/drill-down-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/kpIs/kpi-controller.js">
+      <publishTime>03/13/2017 14:55:31</publishTime>
+    </File>
+    <File Include="ngControllers/kpIs/kpi-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/kpIs/secondary-metric-kpi-controller.js">
+      <publishTime>03/13/2017 14:56:03</publishTime>
+    </File>
+    <File Include="ngControllers/kpIs/secondary-metric-kpi-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/metrics/assign-metrics-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/metrics/assign-metrics-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/metrics/metrics-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/metrics/metrics-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/modules/dashboard-helper.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/modules/dashboard-helper.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/modules/hierarchy-chart-helper.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/modules/hierarchy-chart-helper.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/multiple-scorecard-hierarchy-controller.js">
+      <publishTime>11/21/2016 14:10:58</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/multiple-scorecard-hierarchy-controller.min.js">
+      <publishTime>11/21/2016 15:16:41</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/multiple-scorecards-controller.js">
+      <publishTime>11/29/2016 15:56:44</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/multiple-scorecards-controller.min.js">
+      <publishTime>11/30/2016 18:09:20</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/scorecard-admin-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/scorecard-admin-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/scorecard-dashboard-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/scorecard-dashboard-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/scorecard-hierarchy-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/scorecard/scorecard-hierarchy-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/target/copy-target-controller.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngControllers/target/copy-target-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/target/daily-targets-tpl-controller.js">
+      <publishTime>03/13/2017 13:01:03</publishTime>
+    </File>
+    <File Include="ngControllers/target/daily-targets-tpl-controller.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngControllers/target/manage-target-controller.js">
+      <publishTime>03/16/2017 10:54:53</publishTime>
+    </File>
+    <File Include="ngControllers/target/manage-target-controller.min.js">
+      <publishTime>03/16/2017 14:03:04</publishTime>
+    </File>
+    <File Include="ngDirectives/app-menu-directive.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngDirectives/app-menu-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/calendar-directive.js">
+      <publishTime>03/15/2017 11:24:18</publishTime>
+    </File>
+    <File Include="ngDirectives/calendar-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/counter-measure-directive.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngDirectives/counter-measure-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/datePickerDirective.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngDirectives/datePickerDirective.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/enforce-max-tags-directive.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngDirectives/enforce-max-tags-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/full-year-calendar-directive.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngDirectives/full-year-calendar-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/graph-directive.js">
+      <publishTime>02/20/2017 15:11:23</publishTime>
+    </File>
+    <File Include="ngDirectives/graph-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/hierarchy-chart-directive.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngDirectives/hierarchy-chart-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/is-data-loaded-directive.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngDirectives/is-data-loaded-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/kpi-letter-directive.js">
+      <publishTime>03/15/2017 11:21:12</publishTime>
+    </File>
+    <File Include="ngDirectives/kpi-letter-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/monthly-plan-directive.js">
+      <publishTime>03/15/2017 12:48:21</publishTime>
+    </File>
+    <File Include="ngDirectives/monthly-plan-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/scorecard-list-directive.js">
+      <publishTime>11/29/2016 13:58:46</publishTime>
+    </File>
+    <File Include="ngDirectives/scorecard-list-directive.min.js">
+      <publishTime>11/30/2016 18:09:20</publishTime>
+    </File>
+    <File Include="ngDirectives/sgl-click-directive.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngDirectives/sgl-click-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/slider.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngDirectives/slider.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/ui-select-wrap.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngDirectives/ui-select-wrap.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/valid-number-directive.js">
+      <publishTime>02/23/2017 17:12:53</publishTime>
+    </File>
+    <File Include="ngDirectives/valid-number-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/ValidationDirective.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngDirectives/ValidationDirective.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/view-target-directive.js">
+      <publishTime>03/15/2017 11:24:18</publishTime>
+    </File>
+    <File Include="ngDirectives/view-target-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngDirectives/workday-pattern-directive.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngDirectives/workday-pattern-directive.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngFilters/grid-dropdown.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngFilters/grid-dropdown.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngFilters/metric-type.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngFilters/metric-type.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngFilters/title-case.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngFilters/title-case.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngServices/actuals-service.js">
+      <publishTime>03/07/2017 10:38:58</publishTime>
+    </File>
+    <File Include="ngServices/actuals-service.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngServices/Common/authService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/authService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/configService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/configService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/confirmationModalService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/confirmationModalService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/filterUrlService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/filterUrlService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/monthNavigationService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/monthNavigationService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/ndmsServiceInterceptor.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/ndmsServiceInterceptor.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/notificationModalService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/notificationModalService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/notificationService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/notificationService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/scorecardInfoService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/scorecardInfoService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/sessionStorageService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/sessionStorageService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/utilityService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/utilityService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/Common/validationService.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/Common/validationService.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="ngServices/configuration-service.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/configuration-service.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngServices/holiday-pattern-service.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/holiday-pattern-service.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngServices/kpi-service.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/kpi-service.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngServices/metrics-service.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/metrics-service.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngServices/organizational-data-service.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/organizational-data-service.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngServices/scorecard-service.js">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngServices/scorecard-service.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngServices/target-service.js">
+      <publishTime>03/15/2017 19:34:00</publishTime>
+    </File>
+    <File Include="ngServices/target-service.min.js">
+      <publishTime>03/16/2017 14:03:09</publishTime>
+    </File>
+    <File Include="ngTemplates/Common/AppMenu.tpl.html">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngTemplates/Common/AppMenu.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngTemplates/Common/calendar.html">
+      <publishTime>03/15/2017 11:24:18</publishTime>
+    </File>
+    <File Include="ngTemplates/Common/calendar.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngTemplates/Common/ConfimationModal.tpl.html">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngTemplates/Common/ConfimationModal.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngTemplates/Common/DatePicker.tpl.html">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngTemplates/Common/DatePicker.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/actuals/partials/mark-holiday.html">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngViews/actuals/partials/mark-holiday.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/actuals/partials/primary-metric.html">
+      <publishTime>03/16/2017 12:41:39</publishTime>
+    </File>
+    <File Include="ngViews/actuals/partials/primary-metric.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/actuals/partials/secondary-metric.html">
+      <publishTime>03/16/2017 12:41:43</publishTime>
+    </File>
+    <File Include="ngViews/actuals/partials/secondary-metric.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/admin/partials/add-holiday-pattern.html">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngViews/admin/partials/add-holiday-pattern.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/admin/partials/view-holiday-pattern.html">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngViews/admin/partials/view-holiday-pattern.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/admin/templates/full-year-calendar.tpl.html">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngViews/admin/templates/full-year-calendar.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/counter-measure/partials/counter-measure-popup.html">
+      <publishTime>02/20/2017 15:11:24</publishTime>
+    </File>
+    <File Include="ngViews/counter-measure/partials/counter-measure-popup.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/dashboard/partials/scorecard-dashboard.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/dashboard/partials/scorecard-dashboard.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/partials/drill-down.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/partials/drill-down.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/partials/kpi.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/partials/kpi.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/partials/secondary-metric-kpi.html">
+      <publishTime>03/09/2017 11:54:46</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/partials/secondary-metric-kpi.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/cost.tpl.html">
+      <publishTime>03/15/2017 18:16:54</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/cost.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/counter-measure.tpl.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/counter-measure.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/delivery.tpl.html">
+      <publishTime>03/15/2017 12:49:18</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/delivery.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/innovation.tpl.html">
+      <publishTime>03/15/2017 18:16:54</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/innovation.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/net-working-capital.tpl.html">
+      <publishTime>03/15/2017 18:16:54</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/net-working-capital.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/people.tpl.html">
+      <publishTime>03/15/2017 18:16:54</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/people.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/quality.tpl.html">
+      <publishTime>03/15/2017 11:21:12</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/quality.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/revenue.tpl.html">
+      <publishTime>03/15/2017 18:16:54</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/revenue.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/safety.tpl.html">
+      <publishTime>03/15/2017 18:16:54</publishTime>
+    </File>
+    <File Include="ngViews/kpIs/templates/safety.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/metrics/partials/add-edit-metrics.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/metrics/partials/add-edit-metrics.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/metrics/partials/assign-metrics.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/metrics/partials/assign-metrics.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/metrics/templates/uiSelect.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/metrics/templates/uiSelect.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/partials/add-edit-scorecard.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/partials/add-edit-scorecard.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/partials/multiple-scorecard-hierarchy.html">
+      <publishTime>11/21/2016 14:11:00</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/partials/multiple-scorecard-hierarchy.min.html">
+      <publishTime>11/21/2016 15:16:42</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/partials/multiple-scorecards.html">
+      <publishTime>11/29/2016 17:52:32</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/partials/multiple-scorecards.min.html">
+      <publishTime>11/30/2016 18:09:21</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/partials/scorecard-hierarchy.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/partials/scorecard-hierarchy.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/templates/scorecardlist.tpl.html">
+      <publishTime>11/30/2016 18:01:50</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/templates/scorecardlist.tpl.min.html">
+      <publishTime>11/30/2016 18:09:21</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/templates/workday-pattern.tpl.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/scorecard/templates/workday-pattern.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/targets/partials/add-primary-metric.html">
+      <publishTime>03/15/2017 12:48:31</publishTime>
+    </File>
+    <File Include="ngViews/targets/partials/add-primary-metric.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/targets/partials/manage-target.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/targets/partials/manage-target.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/targets/partials/view-target.html">
+      <publishTime>03/15/2017 11:24:18</publishTime>
+    </File>
+    <File Include="ngViews/targets/partials/view-target.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/targets/templates/CopyTargetPopup.tpl.html">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="ngViews/targets/templates/CopyTargetPopup.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/targets/templates/dailyTargetPopup.tpl.html">
+      <publishTime>03/15/2017 11:24:18</publishTime>
+    </File>
+    <File Include="ngViews/targets/templates/dailyTargetPopup.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/targets/templates/monthlyPlan.tpl.html">
+      <publishTime>03/15/2017 12:48:44</publishTime>
+    </File>
+    <File Include="ngViews/targets/templates/monthlyPlan.tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="ngViews/targets/templates/view-target-tpl.html">
+      <publishTime>03/16/2017 13:16:25</publishTime>
+    </File>
+    <File Include="ngViews/targets/templates/view-target-tpl.min.html">
+      <publishTime>03/16/2017 14:03:11</publishTime>
+    </File>
+    <File Include="package.json">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/20/2017 15:11:20</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.js">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.min.js">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.min.js.map">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria.js">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria.min.js">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria.min.js.map">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-cookies.js">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-cookies.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-cookies.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-csp.css">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-loader.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-loader.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-loader.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-message-format.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-message-format.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-message-format.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-mocks.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-moment.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-moment.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-moment.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-resource.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-resource.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-resource.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-sanitize.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-sanitize.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-sanitize.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-scenario.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/angular-touch.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-touch.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-touch.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular-ui/ui-bootstrap-tpls.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/angular-ui/ui-bootstrap-tpls.min.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/angular-ui/ui-bootstrap.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/angular-ui/ui-bootstrap.min.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/angular.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/angularAMD.min.js">
+      <publishTime>02/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/d3/d3-tip.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/d3/d3.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/d3/d3.min.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/d3/LICENSE">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/errors.json">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/highchart/highcharts.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.all.min.js">
+      <publishTime>02/20/2017 15:11:29</publishTime>
+    </File>
+    <File Include="Scripts/kendo/kendo.all.min.js.map">
+      <publishTime>02/20/2017 15:11:35</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/ng-tags-input.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/r.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/require.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/select.js">
+      <publishTime>02/20/2017 15:11:26</publishTime>
+    </File>
+    <File Include="Scripts/select.min.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/ui-grid.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/ui-grid.min.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Scripts/version.json">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Styles/calender.less">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Styles/kendo/kendo.bootstrap.min.css">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Styles/kendo/kendo.common-bootstrap.min.css">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Styles/NovDMS.css">
+      <publishTime>03/15/2017 11:24:19</publishTime>
+    </File>
+    <File Include="Styles/NovDMS.min.css">
+      <publishTime>03/16/2017 14:03:12</publishTime>
+    </File>
+    <File Include="Styles/slider/ion.rangeSlider.skinFlat.css">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="Styles/slider/ion.rangeSlider.skinFlat.min.css">
+      <publishTime>03/16/2017 14:03:12</publishTime>
+    </File>
+    <File Include="UIBehaviours/accordion.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="UIBehaviours/accordion.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="UIBehaviours/appBehaviour.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="UIBehaviours/appBehaviour.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="UIBehaviours/appMenu.js">
+      <publishTime>02/20/2017 15:11:27</publishTime>
+    </File>
+    <File Include="UIBehaviours/appMenu.min.js">
+      <publishTime>03/16/2017 14:03:10</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/07/2017 15:36:30</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

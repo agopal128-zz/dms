@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="6aff35e7-92e6-4c3a-ac88-6182b2828ff9" name="NDMS.Business.Interface" linkedPackageId="0028c8ad-131d-4b9a-9c71-a07f49797eca" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="c6167234-18fd-4e89-ba80-872baaed9458" name="IScorecardManager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a414aef1-2682-412f-9a6b-52152ff2c95d" />
+        <ownedOperations>
+          <operation Id="bd73fa0d-e30d-49a1-a5e0-e5b5274cc150" name="AddScorecard" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="30bc10a0-b29d-4679-b448-6ac91390cee5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d76f72f4-f03c-4f2e-a9c2-8a40213d7e20" name="ScorecardItem scorecardRequest" direction="In" isUnique="false">
+                  <elementDefinition Id="6df94f16-b7f3-435c-8f0a-fa21c0c81e24" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9b80a074-1c0d-4764-b3ba-a8d9e4e0ce07" direction="Return">
+                  <elementDefinition Id="a6a345ed-21b7-46f3-88ed-33ae46c82a99" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="61497dfd-f9f5-4294-bb92-fd89b99ba9a7" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b34a2f40-d9c3-491a-a086-0082bc165bdc" name="UpdateScorecard" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="69017526-a64a-4a6d-a70d-3ece8b499526" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7418eaad-784a-423d-9a4c-2162dd4c6f64" name="ScorecardItem scorecardRequest" direction="In" isUnique="false">
+                  <elementDefinition Id="37051870-9ea8-4b81-89b1-aed55e26cfb7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7699578b-6b43-42ac-9201-1789ee92eaa0" direction="Return">
+                  <elementDefinition Id="78acbf3e-0bc8-41da-ba56-1b88954453ee" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d04b5052-1c6a-4bb3-b0cf-c5aca449187e" name="GetScorecard" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="19c615e9-8e0b-4939-a85a-c94f6d0af63f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fe54efbd-b4db-4ea5-93d0-72f0696631a6" name="int id" direction="In" isUnique="false">
+                  <elementDefinition Id="76414211-32ab-4647-8b57-d8d284cfd721" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8ff1ed9c-c296-4324-94fd-3c8034737555" direction="Return">
+                  <elementDefinition Id="27a99bd5-92f9-47b7-8269-eb60561af5f6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f28fc418-b2cb-4d78-b55b-8c7ad0fb83fc" LastKnownName="ScorecardItem" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2926243c-d409-4951-bc35-2ce85119fbe7" name="GetScorecardHierarchy" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="509428b5-da93-4805-9a77-7bd9eb9013b2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="400d7d58-7f8c-4fdc-b12b-33fa91a237d1" direction="Return">
+                  <elementDefinition Id="d929ba41-e65b-4663-b824-55f08a1527e2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ee9ff756-ecd6-4b9a-9c71-4f7aecc6cce4" LastKnownName="ScorecardNode" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="61497dfd-f9f5-4294-bb92-fd89b99ba9a7" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f28fc418-b2cb-4d78-b55b-8c7ad0fb83fc" name="ScorecardItem" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::ScorecardItem">
+        <elementDefinition Id="61c81a63-68fe-4c72-b4f5-1a0ec1441a6f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ee9ff756-ecd6-4b9a-9c71-4f7aecc6cce4" name="ScorecardNode" isAbstract="false" isLeaf="false" cachedFullName="ScorecardNode">
+        <elementDefinition Id="94b2c76d-bcc6-4e28-92e4-1aebef0ce716" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="2e5d9d97-2beb-48d0-80ec-a35db4719722" name="IMetricManager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0cf1c5a9-670d-45d5-8ca9-31e73e8c735a" />
+        <ownedOperations>
+          <operation Id="aec93c3b-1c89-4071-a5b1-ade745707b51" name="GetAll" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="56a0e733-3781-40e1-9fbe-0f7c83b0eedf" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dd3b405a-cfb3-403a-bf2c-9af83328de48" direction="Return">
+                  <elementDefinition Id="d80b4f4a-f88b-42ec-ab41-4267e240012e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f7f542c2-5fd8-41d8-b6a3-1b02f03d3433" LastKnownName="IEnumerable&lt;MetricItem&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fcc756b7-2a3c-4ca8-875e-091bae21b976" name="Get" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5d147edb-d1fa-4ec3-98e8-86bb3c3a65f9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c02d12c5-0f0e-4146-ad90-79310d69f0ac" name="int id" direction="In" isUnique="false">
+                  <elementDefinition Id="0f37061a-0d65-4536-ae0b-4c14cef04f83" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e29ad014-d32a-46a3-a7f3-c9a27b5d8f75" direction="Return">
+                  <elementDefinition Id="21319bd9-309e-4e77-bee2-635f12b23ecf" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="00495595-013d-4429-820f-77b7fe4e2c17" LastKnownName="MetricItem" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d0f69eb8-5c6a-4c20-b7f3-d303b7018c2d" name="Add" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dcef01a8-338c-4d38-bbef-87af104e75fc" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bfad7cb8-6b61-46ba-a0cf-d71d9496cbbb" name="MetricItem metric" direction="In" isUnique="false">
+                  <elementDefinition Id="33adeb32-4dad-4716-8094-9d6b530dc90b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3149781d-09fa-45c7-86b6-0f106ce6d355" direction="Return">
+                  <elementDefinition Id="a381042d-5395-44b4-bc8c-f8958312c5be" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e703f043-73ed-4054-911e-aba49abc0a89" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c4234332-113b-44d3-8104-0577e88e1a46" name="GetAllMetricMappings" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0594d0fa-d611-41cc-a295-50d1c3a1b1c5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a8539bd8-9884-433d-a9ef-e80024d0e8e2" direction="Return">
+                  <elementDefinition Id="e87376e7-b471-4e9c-9a45-0ab777120346" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f9b4287c-2a2e-4f1e-babd-d4b090609dc5" LastKnownName="IEnumerable&lt;MetricMappingItem&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9bb13ba6-aa61-44dc-94ad-edb99af2df86" name="AddMetricMapping" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7cbc76aa-234e-428f-9020-30869cc4a5a3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="597d6de0-6f22-4174-bcb3-53bf5d36b321" direction="Return">
+                  <elementDefinition Id="f6e2cee0-3441-40bb-b7db-67ae9b30a1e5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1bae16d8-149c-452f-99a3-5f730da8a30d" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0fa79a58-2b66-4200-a728-407f8cdb9098" name="MetricMappingItem metricMappingRequest" direction="In" isUnique="false">
+                  <elementDefinition Id="5672def2-8926-42f0-abf1-770728f94a8f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="f7f542c2-5fd8-41d8-b6a3-1b02f03d3433" name="IEnumerable&lt;MetricItem&gt;" isAbstract="false" isLeaf="false" cachedFullName="IEnumerable&lt;MetricItem&gt;">
+        <elementDefinition Id="ef17bd27-5b40-4711-a2a6-4da92faa348a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="00495595-013d-4429-820f-77b7fe4e2c17" name="MetricItem" isAbstract="false" isLeaf="false" cachedFullName="NDMSArchitecture::MetricItem">
+        <elementDefinition Id="f78d8dc3-7f1a-4caa-b5b5-641cd5740971" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e703f043-73ed-4054-911e-aba49abc0a89" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f9b4287c-2a2e-4f1e-babd-d4b090609dc5" name="IEnumerable&lt;MetricMappingItem&gt;" isAbstract="false" isLeaf="false" cachedFullName="IEnumerable&lt;MetricMappingItem&gt;">
+        <elementDefinition Id="8cfdb1a9-fef6-40e6-bd5e-6c98a5cb5e57" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1bae16d8-149c-452f-99a3-5f730da8a30d" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="0028c8ad-131d-4b9a-9c71-a07f49797eca" name="NDMSArchitecture">
+    <elementDefinition Id="96a75835-c6f4-4826-a1da-56ff1d3a7694" />
+    <profileInstances>
+      <packageHasProfileInstances Id="9cd460e4-de5e-4481-be1b-b37aeed32861">
+        <profileInstance Id="524bfa4a-3789-453a-8e3e-f27825f1a799" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="25085a6a-f85e-4818-a4aa-3bc5abc92581">
+        <profileInstance Id="1bd2e148-9bcd-4767-b1ab-67b2977db059" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

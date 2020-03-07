@@ -1,0 +1,51 @@
+<div class="row sqdicp-wrapper"><div class="col-md-12" style="z-index:1"><div class="btn-back-main" ng-if="ctrl.isBackButtonVisible"><i class="fa fa-arrow-circle-left" ng-click="appCtrl.back()"></i></div><div class="legend"><div class="legend-item"><a class="legend-achieved"></a>Achieved Goal</div><div class="legend-item"><a class="legend-missed"></a>Missed Goal/Safety Accident</div><div class="legend-item"><a class="legend-holiday"></a>Non-Workday</div><div class="legend-item"><a class="legend-not-tracked"></a> Not Currently Being Tracked</div></div></div><div is-data-loaded="ctrl.kpiDashboardData.kpis" ng-if="ctrl.kpiDashboardData.kpis!=null &&  ctrl.kpiDashboardData.kpis.length!=0"><div class="column col-{{vm.kpiName}}" data-ng-repeat="vm in ctrl.kpiDashboardData.kpis track by $index" data-ng-click="ctrl.navigateToKpi(vm.kpiId)"><h5 class="kpi-name">{{vm.kpiName}}</h5><div class="primary-metric-name" title="{{vm.primaryMetricData.metricName}}"><p>{{ vm.primaryMetricData.metricName ? vm.primaryMetricData.metricName : ''}}</p></div><div class="metric-wrapper"><div class="secondary" ng-init="sm.actual= sm.dailyActual? sm.dailyActual:sm.monthlyActual" ng-class="{inactive:sm.actual.status===0,green:sm.actual.status===1,red:sm.actual.status===2,
+                     blue:sm.actual.status===3}" data-ng-repeat="sm in vm.secondaryMetricsData"></div><kpi-letter kpi-id="vm.kpiId" dialy-data="vm.primaryMetricData.dailyActuals" monthly-data="vm.primaryMetricData.monthlyActuals"></kpi-letter></div><div class="row graph-wrapper"><div class="" data-ng-if="ctrl.isGraphDataLoaded[$index] && ctrl.isGraphData[$index]"><metric-graph class="graph" page="ctrl.graphPlottingPage" value="ctrl.graphData[$index]"></metric-graph></div><div class="col-md-12 graph" data-ng-if="!ctrl.isGraphData[$index]"><h6>{{ctrl.isGraphDataLoaded[$index] ? "NO GRAPH AVAILABLE" : "Loading..."}}</h6></div></div><div class="row counter-measure-wrapper"><div class="col-md-12 vertically-center"><div class="counter-measures"><h1 class="issue-count">{{vm.counterMeasureCount}}</h1><h6>COUNTER MEASURES</h6></div></div></div><div class="row fiscal-month-row"><div class="col-md-12 vertically-center"><div class="fiscal-month"><div class="fiscal-heading"><h5>FISCAL MONTH</h5></div><div class="month-wrapper"><div class="month" data-ng-repeat="item in ctrl.fiscalMonthData[$index].fiscalMonthStatusList"><a ng-class="{inactive:item.status===0,green:item.status===1,red:item.status===2}">{{item.month}}</a></div></div></div></div></div></div><hr class="main"></div><div class="scorecard-content" ng-if="ctrl.kpiDashboardData.kpis.length==0"><div class="info"><img src="Images/info.png"><h4>Scorecard does not have any targets for this calendar month!</h4><h6></h6></div></div></div><script type="text/javascript">$(function () {
+        var columnWidth = ($('.sqdicp-wrapper').width() / 7) - 3;
+        if (window.innerWidth > 991) {
+            $('.column').css('width', columnWidth);
+        }
+        if (window.innerWidth > 1900) {
+            var height = window.innerHeight;
+            var remainingHeight = height - ($('.column .graph-wrapper').offset().top + $('.column .graph-wrapper').outerHeight(true) + $('.metric-wrapper').width() * 330 / 286);
+            $('.column .counter-measure-wrapper').css({ 'height': remainingHeight * 0.35 });
+            $('.column .fiscal-month-row').css({ 'height': remainingHeight * 0.65 });
+        }
+        $(window).resize(function () {
+            if ($('.sqdicp-wrapper').length > 0) {
+                var numberOfKpis = $('.sqdicp-wrapper .column').length;
+                var widthParameter = numberOfKpis;
+                if (numberOfKpis < 6) {
+                    widthParameter = 6;
+                }
+                else if (numberOfKpis > 10) {
+                    widthParameter = 10;
+                }
+
+                var columnWidth = $('.sqdicp-wrapper').width() / widthParameter - 3;
+                if (numberOfKpis <= 6) {
+                    columnWidth = columnWidth - 6;
+                }
+                if (window.innerWidth > 991) {
+                    $('.column').css('width', columnWidth);
+                    $('.column').parent().css('width', columnWidth * numberOfKpis).css('margin', '0 auto');
+                }
+                else {
+                    $('.column').css('width', '100%');
+                    $('.column').parent().css('width', '100%')
+                }
+                if (window.innerWidth > 1900) {
+                    var height = window.innerHeight;
+                    var remainingHeight = height - ($('.column .graph-wrapper').offset().top + $('.column .graph-wrapper').outerHeight(true) + 10);
+                    $('.column .counter-measure-wrapper').css({ 'height': remainingHeight * 0.35 });
+                    $('.column .fiscal-month-row').css({ 'height': remainingHeight * 0.65 });
+                }
+                if (numberOfKpis <= 6) {
+                    $('.metric-wrapper').css({ 'margin': '5px 0px 10px' });
+                }
+                else{
+                    $('.metric-wrapper').css({'margin':'10px 0 20px' });
+                }
+            }
+        });
+
+    });</script>

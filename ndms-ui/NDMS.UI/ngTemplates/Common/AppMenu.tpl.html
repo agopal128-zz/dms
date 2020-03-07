@@ -1,0 +1,20 @@
+﻿
+<div>
+    <ul class="sidebar-nav">
+        <li data-ng-repeat="m in menu" class="treeview">
+            <a class="active" data-ng-href="{{m.url}}" data-menu="{{m.key}}">
+                <i class="{{m.iconClass}} fa-lg"></i>
+                <span class="menu-item">{{m.value}}</span>  
+            </a>
+            <ul class="treeview-menu">
+                <li data-ng-repeat="item in m.subitems">
+                    <a data-ng-href="{{item.url}}" data-menu="{{item.key}}">
+                        <i class="fa fa-circle"></i>
+                        <span>{{item.value}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+

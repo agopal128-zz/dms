@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/NDMS.UI/v14/.suo
+/NDMS.UI/obj/Debug
+/NDMS.UI/node_modules
+/.vs/config/applicationhost.config
+/NDMS.UI/bin
+/packages
