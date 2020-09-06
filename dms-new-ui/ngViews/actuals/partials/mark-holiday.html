@@ -1,0 +1,14 @@
+﻿<div class="popup-wrapper actuals-mark-holiday">
+    <div class="popup">
+        <div class="popup-content">
+            <h1 class="set-holiday-date"><small>{{ctrl.metricData.date|date:'fullDate'}}</small></h1>
+        </div>
+        <div class="popup-bottom">
+            <a class="btn btn-default button-cancel" ng-click="ctrl.cancel()">Cancel</a>
+            <!--<a class="btn button-mark pull-right" sglClick="ctrl.markHoliday(ctrl.metricData.status)">{{ctrl.actionForHoliday}}</a>-->
+            <button data-ng-init="ctrl.isActualSaveDisabled = false" class="btn button-mark pull-right"
+                    ng-click="ctrl.isActualSaveDisabled = true;ctrl.markHoliday(ctrl.metricData.status);"
+                    ng-disabled="ctrl.isActualSaveDisabled">{{ctrl.actionForHoliday}}</button>
+        </div>
+    </div>
+</div>

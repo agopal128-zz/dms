@@ -1,0 +1,29 @@
+﻿<div class="scorecard-dropdown dropdown" >
+    <button class="dropdown-toggle" type="button" title="Select Scorecard" data-toggle="dropdown">
+        <span class="fa fa-caret-down fa-2x"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right">
+        <li ng-if="isHierarchyView && scorecardOptions.rootScorecards.length">
+            <span>Top Level Scorecards</span>
+        <li>
+        <li ng-if="isHierarchyView" ng-repeat="option in scorecardOptions.rootScorecards">
+            <a ng-click="changeHierarchyScorecard({option:option})">{{option.name}}</a>
+        </li>
+        <li ng-if="scorecardOptions.kpiOwnerScorecards.length">
+            <span> KPI Owner Scorecards</span>
+        </li>
+        <li ng-repeat="option in scorecardOptions.kpiOwnerScorecards">
+            <a ng-if="isScorecardView" ng-href="Scorecard/{{option.id}}">{{option.name}}</a>
+            <a ng-if="isHierarchyView" ng-click="changeHierarchyScorecard({option:option})">{{option.name}}</a>
+        </li>
+
+        <li ng-if="scorecardOptions.teamMemberScorecards.length">
+            <span> Team member Scorecards</span>
+        </li>
+        <li ng-repeat="option in scorecardOptions.teamMemberScorecards">
+            <a ng-if="isScorecardView" ng-href="Scorecard/{{option.id}}">{{option.name}}</a>
+            <a ng-if="isHierarchyView" ng-click="changeHierarchyScorecard({option:option})">{{option.name}}</a>
+        </li>
+    </ul>
+
+</div>

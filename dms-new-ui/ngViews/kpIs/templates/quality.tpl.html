@@ -1,0 +1,550 @@
+﻿<div class="letter-individual quality daily" ng-if="ctrl.showDays || !ctrl.showMonths">
+    <table ng-if="ctrl.showDays">
+        <tr>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[0].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[0],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[0],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[0].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[0].status===3 || ctrl.dialyData[0].status===0 || ctrl.dialyData[0].status===4)">{{ctrl.dialyData[0].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[1].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[1],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[1],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[1].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[1].status===3 || ctrl.dialyData[1].status===0 || ctrl.dialyData[1].status===4)">{{ctrl.dialyData[1].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[2].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[2],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[2],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[2].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[2].status===3 || ctrl.dialyData[2].status===0 || ctrl.dialyData[2].status===4)">{{ctrl.dialyData[2].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element"></td>
+        </tr>
+        <tr>
+            <td class="element"></td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[3].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[3],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[3],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[3].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[3].status===3 || ctrl.dialyData[3].status===0 || ctrl.dialyData[3].status===4)">{{ctrl.dialyData[3].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[4].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[4],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[4],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[4].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[4].status===3 || ctrl.dialyData[4].status===0 || ctrl.dialyData[4].status===4)">{{ctrl.dialyData[4].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[5].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[5],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[5],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[5].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[5].status===3 || ctrl.dialyData[5].status===0 || ctrl.dialyData[5].status===4)">{{ctrl.dialyData[5].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[6].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[6],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[6],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[6].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[6].status===3 || ctrl.dialyData[6].status===0 || ctrl.dialyData[6].status===4)">{{ctrl.dialyData[6].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[7].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[7],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[7],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[7].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[7].status===3 || ctrl.dialyData[7].status===0 || ctrl.dialyData[7].status===4)">{{ctrl.dialyData[7].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+        </tr>
+        <tr>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[8].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[8],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[8],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[8].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[8].status===3 || ctrl.dialyData[8].status===0 || ctrl.dialyData[8].status===4)">{{ctrl.dialyData[8].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[9].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[9],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[9],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[9].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[9].status===3 || ctrl.dialyData[9].status===0 || ctrl.dialyData[9].status===4)">{{ctrl.dialyData[9].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[10].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[10],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[10],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[10].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[10].status===3 || ctrl.dialyData[10].status===0 || ctrl.dialyData[10].status===4)">{{ctrl.dialyData[10].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[11].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[11],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[11],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[11].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[11].status===3 || ctrl.dialyData[11].status===0 || ctrl.dialyData[11].status===4)">{{ctrl.dialyData[11].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[12].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[12],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[12],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[12].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[12].status===3 || ctrl.dialyData[12].status===0 || ctrl.dialyData[12].status===4)">{{ctrl.dialyData[12].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[13].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[13],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[13],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[13].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[13].status===3 || ctrl.dialyData[13].status===0 || ctrl.dialyData[13].status===4)">{{ctrl.dialyData[13].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[14].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[14],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[14],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[14].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[14].status===3 || ctrl.dialyData[14].status===0 || ctrl.dialyData[14].status===4)">{{ctrl.dialyData[14].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[15].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[15],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[15],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[15].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[15].status===3 || ctrl.dialyData[15].status===0 || ctrl.dialyData[15].status===4)">{{ctrl.dialyData[15].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[16].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[16],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[16],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[16].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[16].status===3 || ctrl.dialyData[16].status===0 || ctrl.dialyData[16].status===4)">{{ctrl.dialyData[16].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[17].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[17],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[17],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[17].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[17].status===3 || ctrl.dialyData[17].status===0 || ctrl.dialyData[17].status===4)">{{ctrl.dialyData[17].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[18].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[18],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[18],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[18].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[18].status===3 || ctrl.dialyData[18].status===0 || ctrl.dialyData[18].status===4)">{{ctrl.dialyData[18].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[19].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[19],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[19],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[19].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[19].status===3 || ctrl.dialyData[19].status===0 || ctrl.dialyData[19].status===4)">{{ctrl.dialyData[19].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="element"></td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[20].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[20],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[20],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[20].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[20].status===3 || ctrl.dialyData[20].status===0 || ctrl.dialyData[20].status===4)">{{ctrl.dialyData[20].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[21].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[21],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[21],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[21].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[21].status===3 || ctrl.dialyData[21].status===0 || ctrl.dialyData[21].status===4)">{{ctrl.dialyData[21].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[22].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[22],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[22],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[22].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[22].status===3 || ctrl.dialyData[22].status===0 || ctrl.dialyData[22].status===4)">{{ctrl.dialyData[22].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[23].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[23],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[23],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[23].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[23].status===3 || ctrl.dialyData[23].status===0 || ctrl.dialyData[23].status===4)">{{ctrl.dialyData[23].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[24].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[24],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[24],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[24].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[24].status===3 || ctrl.dialyData[24].status===0 || ctrl.dialyData[24].status===4)">{{ctrl.dialyData[24].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+        </tr>
+        <tr>
+            <td class="element"></td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[25].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[25],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[25],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[25].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[25].status===3 || ctrl.dialyData[25].status===0 || ctrl.dialyData[25].status===4)">{{ctrl.dialyData[25].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[26].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[26],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[26],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[26].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[26].status===3 || ctrl.dialyData[26].status===0 || ctrl.dialyData[26].status===4)">{{ctrl.dialyData[26].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-class="getStatusClass(ctrl.dialyData[27].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[27],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[27],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[27].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[27].status===3 || ctrl.dialyData[27].status===0 || ctrl.dialyData[27].status===4)">{{ctrl.dialyData[27].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-if="ctrl.dialyData[28]" ng-class="getStatusClass(ctrl.dialyData[28].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[28],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[28],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[28].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[28].status===3 ||ctrl.dialyData[28].status===0 || ctrl.dialyData[28].status===4)">{{ctrl.dialyData[28].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element"></td>
+        </tr>
+        <tr>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element date">
+                <a ng-if="ctrl.dialyData[29]" ng-class="getStatusClass(ctrl.dialyData[29].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[29],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[29],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[29].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[29].status===3 || ctrl.dialyData[29].status===0 || ctrl.dialyData[29].status===4)">{{ctrl.dialyData[29].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element date">
+                <a ng-if="ctrl.dialyData[30]" ng-class="getStatusClass(ctrl.dialyData[30].status)"
+                   ng-dblclick="displayPopup({data: ctrl.dialyData[30],type:'holiday',metricDetails:ctrl.metricDetails})"
+                   sglclick="displayPopup({data: ctrl.dialyData[30],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>{{ctrl.dialyData[30].day}}</span>
+                        <span ng-if="!(ctrl.dialyData[30].status===3 || ctrl.dialyData[30].status===0 || ctrl.dialyData[30].status===4)">{{ctrl.dialyData[30].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<div class="letter-individual quality monthly" ng-if="ctrl.showMonths">
+    <!--monthly view-->
+    <table>
+        <tr>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>            
+        </tr>
+        <tr>   
+            <td class="element"></td>       
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[0].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[0],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Jan</span>
+                        <span ng-if="!(ctrl.monthlyData[0].status===3 || ctrl.monthlyData[0].status===0 || ctrl.monthlyData[0].status===4)">{{ctrl.monthlyData[0].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[1].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[1],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Feb</span>
+                        <span ng-if="!(ctrl.monthlyData[1].status===3 || ctrl.monthlyData[1].status===0 || ctrl.monthlyData[1].status===4)">{{ctrl.monthlyData[1].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[2].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[2],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Mar</span>
+                        <span ng-if="!(ctrl.monthlyData[2].status===3 || ctrl.monthlyData[2].status===0 || ctrl.monthlyData[2].status===4)">{{ctrl.monthlyData[2].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+        </tr>
+        <tr>  
+            <td class="element"></td>          
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[3].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[3],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Apr</span>
+                        <span ng-if="!(ctrl.monthlyData[3].status===3 || ctrl.monthlyData[3].status===0 || ctrl.monthlyData[3].status===4)">{{ctrl.monthlyData[3].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[4].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[4],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>May</span>
+                        <span ng-if="!(ctrl.monthlyData[4].status===3 || ctrl.monthlyData[4].status===0 || ctrl.monthlyData[4].status===4)">{{ctrl.monthlyData[4].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+        </tr>
+        <tr>
+            <td class="element"></td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[5].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[5],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Jun</span>
+                        <span ng-if="!(ctrl.monthlyData[5].status===3 || ctrl.monthlyData[5].status===0 || ctrl.monthlyData[5].status===4)">{{ctrl.monthlyData[5].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[6].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[6],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Jul</span>
+                        <span ng-if="!(ctrl.monthlyData[6].status===3 || ctrl.monthlyData[6].status===0 || ctrl.monthlyData[6].status===4)">{{ctrl.monthlyData[6].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+        </tr>
+        <tr>
+            <td class="element"></td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[7].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[7],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Aug</span>
+                        <span ng-if="!(ctrl.monthlyData[7].status===3 || ctrl.monthlyData[7].status===0 || ctrl.monthlyData[7].status===4)">{{ctrl.monthlyData[7].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[8].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[8],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Sep</span>
+                        <span ng-if="!(ctrl.monthlyData[8].status===3 || ctrl.monthlyData[8].status===0 || ctrl.monthlyData[8].status===4)">{{ctrl.monthlyData[8].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[9].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[9],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Oct</span>
+                        <span ng-if="!(ctrl.monthlyData[9].status===3 || ctrl.monthlyData[9].status===0 || ctrl.monthlyData[9].status===4)">{{ctrl.monthlyData[9].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+            <td class="element"></td>
+        </tr>
+        <tr>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element"></td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[10].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[10],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Nov</span>
+                        <span ng-if="!(ctrl.monthlyData[10].status===3 || ctrl.monthlyData[10].status===0 || ctrl.monthlyData[10].status===4)">{{ctrl.monthlyData[10].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element">
+                <a ng-class="getStatusClass(ctrl.monthlyData[11].status)"
+                   sglclick="displayPopup({data: ctrl.monthlyData[11],type:metricDetails.metricType,metricDetails:ctrl.metricDetails})">
+                    <div class="indicator"></div>
+                    <div class="day-wrapper">
+                        <span>Dec</span>
+                        <span ng-if="!(ctrl.monthlyData[11].status===3 || ctrl.monthlyData[11].status===0 || ctrl.monthlyData[11].status===4)">{{ctrl.monthlyData[11].value| metricType:ctrl.metricDetails.metricDataTypeId}}</span>
+                    </div>
+                </a>
+            </td>
+            <td class="element"></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,63 @@
+﻿<div class="daily-target">
+    <div class="modal-header">
+        <div class="row">
+            <div class="col-md-7" align="right">
+                <h3> Daily View </h3>
+            </div>
+            <div class="col-md-5" ng-if="ctrl.monthlyTarget.hasRolledUpDailyTarget">
+                <toggle-switch data-status=ctrl.showRolledUpTarget data-label-left="'Show Rolled Up Targets'"></toggle-switch>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-md-5">
+                <h3 class="modal-title">
+                    {{ctrl.dynamicPopover.targets.month.name}} {{ctrl.dynamicPopover.targets.month.year}}
+                </h3>
+            </div>
+
+            <div class="col-md-7">
+                <form novalidate>
+                    <div data-ng-if="ctrl.isTargetEntryDaily" class="form-group pull-right">
+                        <label>Daily Rate</label>
+                        <input ng-if="!ctrl.showRolledUpTarget" type="number" class="form-control" placeholder="Rate" data-ng-model="ctrl.monthlyTarget.dailyRateValue"
+                               ng-disabled="!ctrl.isEditMode" valid-number="{{ctrl.metricDataTypeName}}" />
+                        <input ng-if="ctrl.showRolledUpTarget" type="text" class="form-control" placeholder="Rate" value="{{ctrl.monthlyTarget.rolledupGoalValue}}" ng-disabled="true" />
+                               
+                        <button ng-if="ctrl.isEditMode" class="btn btn-primary button-save" type="button" ng-disabled="ctrl.showRolledUpTarget" ng-click="ctrl.applyDailyRate()">Apply</button>
+                    </div>
+                    <div data-ng-if="ctrl.isTargetEntryMonthly" class="form-group pull-right">
+                        <label>Monthly Goal</label>
+                        <input type="text" class="form-control" placeholder="Goal" value="{{ctrl.showRolledUpTarget ? ctrl.monthlyTarget.rolledupGoalValue : ctrl.monthlyTarget.goalValue}}"
+                               ng-disabled="true" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <form novalidate>
+            <calendar data-target="ctrl.dynamicPopover.targets" metric-data-type="ctrl.metricDataType" data-show-rolled-up-targets="ctrl.showRolledUpTarget" mode="ctrl.mode" data-daily-targets="ctrl.dailyTargets"></calendar>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div data-ng-if="ctrl.isEditMode">
+            <div class="col-md-5">
+                <form>
+                    <div data-ng-if="ctrl.isTargetEntryMonthly" class="form-group">
+                        <label>Total</label>
+                        <input type="text" ng-disabled="true" class="form-control" value="{{ctrl.showRolledUpTarget ? ctrl.monthlyTarget.rolledupGoalValue : ctrl.calculateSumofDailyTargets()}}" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <button class="btn btn-default button-cancel" type="button" ng-click="ctrl.cancel()">Cancel</button>
+                <button class="btn btn-primary button-save" type="button" ng-click="ctrl.ok()">Ok</button>
+            </div>
+        </div>
+        <div data-ng-if="!ctrl.isEditMode">
+            <button class="btn btn-default button-cancel" type="button" ng-click="ctrl.cancel()">Close</button>
+        </div>
+    </div>
+</div>

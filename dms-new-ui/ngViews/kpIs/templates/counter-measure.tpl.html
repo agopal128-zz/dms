@@ -1,0 +1,45 @@
+﻿<div class="counter-measure-table table-responsive">
+    <div kendo-tooltip k-options="toolTipOptions">
+        <div kendo-grid k-data-source="ctrl.counterMeasureData" k-options="ctrl.gridOptions" class="table">
+        </div>
+    </div>
+</div>
+
+
+<script id="counterMeasureRowTemplate" type="text/x-kendo-tmpl">
+    <tr data-uid="#: uid #" ng-click="editCounterMeasure(dataItem)" style="word-break: break-word;">
+        <td>#: metricName #</td>
+        <td>#= (counterMeasurePriorityName == null) ? '' : counterMeasurePriorityName #</td>
+        <td>#: issue #</td>
+        <td>#= kendo.toString(kendo.parseDate(openedDate), "MM/dd/yyyy" ) #</td>
+        <td>#: action #</td>
+        <td>#: assignedUserName #</td>
+        <td>#= kendo.toString(kendo.parseDate(dueDate), "MM/dd/yyyy" ) #</td>
+        <td>
+            <div class="status" style="width:25px;height:25px;"
+                 ng-class="{statusnoprogress: #: counterMeasureStatusId #===0,statusinvestigation: #: counterMeasureStatusId #===1,statusidentified: #: counterMeasureStatusId #===2,statusimplemented: #: counterMeasureStatusId #===3,statusconfirmed: #: counterMeasureStatusId #===4}"></div>
+        </td>
+        <td><span>#: commentsCount #</span></td>
+    </tr>
+</script>
+
+<script id="counterMeasureDateFilterTemplate" type="text/x-kendo-tmpl">
+    <div>
+        <div class="k-filter-help-text">Show items in date range:</div>
+
+        <span class="k-widget k-datepicker k-header">
+            <span class="k-picker-wrap k-state-default">                
+                <input class="k-input date-from" type="text" data-role="datepicker" role="combobox" aria-expanded="false" aria-disabled="false" style="width: 100%;" placeholder="From">    
+            </span>
+        </span>
+        <span class="k-widget k-datepicker k-header">
+            <span class="k-picker-wrap k-state-default">                
+                <input class="k-input date-to" type="text" data-role="datepicker" role="combobox" aria-expanded="false" aria-disabled="false" placeholder="To" style="width: 100%;"> 
+            </span>
+        </span>
+        <div style="white-space: nowrap;">
+            <button type="submit" class="k-button k-primary">Filter</button>
+            <button type="reset" class="k-button">Clear</button>
+        </div>
+    </div>
+</script>

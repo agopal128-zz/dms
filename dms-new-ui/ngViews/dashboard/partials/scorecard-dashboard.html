@@ -1,0 +1,135 @@
+﻿<div>
+    <!--<div class="btn-back-main" ng-if="ctrl.isBackButtonVisible">
+        <i class="fa fa-arrow-circle-left" ng-click="appCtrl.back()"></i>
+    </div>-->
+    <div class="legend-help-w main-page-legend">
+        <div class="legend-help">
+            <div class="legend-help-inner">
+                <div class="legend-item">
+                    <i class="color legend-achieved"></i>Achieved Goal
+                </div>
+                <div class="legend-item">
+                    <i class="color legend-missed"></i>Missed Goal/Safety Accident
+                </div>
+                <div class="legend-item">
+                    <i class="color legend-holiday"></i>Non-Workday
+                </div>
+                <div class="legend-item">
+                    <i class="color legend-not-tracked"></i> Not Currently Being Tracked
+                </div>
+            </div>
+            <div class="legend-help-shadow"></div>
+        </div>
+    </div>
+</div>
+<div class="sqdicprn-wrapper">
+    <div class="big-shadow big-shadow-abs"></div>
+    <div ng-if="ctrl.kpiDashboardData.kpis!=null &&  ctrl.kpiDashboardData.kpis.length!=0" class="letters" is-data-loaded="ctrl.kpiDashboardData.kpis">
+        <div class="letter-column col-{{vm.kpiName}}" data-ng-repeat="vm in ctrl.kpiDashboardData.kpis track by $index"
+             data-ng-click="ctrl.navigateToKpi(vm.kpiId)">
+            <div class="letter-item">
+                <div class="letter-item-top">
+                    <div class="title">{{vm.kpiName}}</div>
+                    <div class="subtitle">{{ vm.primaryMetricData.metricName ? vm.primaryMetricData.metricName : ''}}</div>
+                </div>
+                <div class="metric-wrapper">
+                    <div class="secondary" ng-init="sm.actual= sm.dailyActual? sm.dailyActual:sm.monthlyActual"
+                         ng-class="{inactive:sm.actual.status===0,green:sm.actual.status===1,red:sm.actual.status===2,
+                         blue:sm.actual.status===3}"
+                         data-ng-repeat="sm in vm.secondaryMetricsData">
+                    </div>
+                        <kpi-letter kpi-id="vm.kpiId" dialy-data="vm.primaryMetricData.dailyActuals" monthly-data="vm.primaryMetricData.monthlyActuals">
+                        </kpi-letter>
+                </div>
+            </div>
+            <div class="graph-wrapper">
+                <div class="" data-ng-if="ctrl.isGraphDataLoaded[$index] && ctrl.isGraphData[$index]">
+                    <metric-graph class="graph" page="ctrl.graphPlottingPage" value='ctrl.graphData[$index]' kpi-id="vm.kpiId"></metric-graph>
+                </div>
+                <div class="col-md-12 graph" data-ng-if="!ctrl.isGraphData[$index]">
+                    <h6>{{ctrl.isGraphDataLoaded[$index] ? "NO GRAPH AVAILABLE" : "Loading..."}}</h6>
+                </div>
+            </div>
+            <div class="counter-fiscal-w">
+                <div class="counter-measure-wrapper">
+                    <div class="counter-chart-w1">
+                        <div class="counter-chart-w2">
+                            <div class="counter-chart" data-value="0.8333"></div>
+                            <div class="counter-value">
+                                <div class="label">Counter<br />Measures</div>
+                                <div class="val">{{vm.counterMeasureCount}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fiscal-month">
+                    <div class="fiscal-month-header"> FISCAL MONTH </div>
+                    <div class="fiscal-month-months">
+                        <table>
+                            <tr>
+                                <td class="month" data-ng-repeat="item in ctrl.fiscalMonthData[$index].fiscalMonthStatusList.slice(0,6)">
+                                    <a ng-class="{inactive:item.status===0,green:item.status===1,red:item.status===2}">{{item.month}}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="month" data-ng-repeat="item in ctrl.fiscalMonthData[$index].fiscalMonthStatusList.slice(6,12)">
+                                    <a ng-class="{inactive:item.status===0,green:item.status===1,red:item.status===2}">{{item.month}}</a>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="fiscal-month-shadow"></div>
+                </div>
+            </div>
+        </div>
+        <hr class="main">        
+    </div>
+    <div class="scorecard-content" ng-if="ctrl.kpiDashboardData.kpis.length == 0">
+        <div class="info">
+            <img src="Images/info.png">
+            <h4>Scorecard does not have any targets for this calendar month!</h4><h6></h6>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(function () {        
+        $(window).resize(function () {
+            if ($('.sqdicprn-wrapper').length > 0) {
+                var numberOfKpis = $('.sqdicprn-wrapper .letter-column').length;
+                var widthParameter = numberOfKpis;
+                if (numberOfKpis < 6) {
+                    widthParameter = 6;
+                }
+                else if (numberOfKpis > 10) {
+                    widthParameter = 10;
+                }
+
+                var parentWidth = 1900;
+                if (window.innerWidth > 1920) {
+                    parentWidth = 2550;
+                }
+
+                var columnWidth = (100 / widthParameter);
+
+                
+                if (window.innerWidth > 1023) {                   
+                    $('.letter-column').css('width', columnWidth + '%');
+                    $('.letter-column').parent().css('max-width', parentWidth);
+                }
+                else {
+                    $('.letter-column').parent().css('width', '100%');
+                    $('.letter-column').css('width', '100%');                    
+                }
+                if (numberOfKpis <= 6) {
+                    $('.metric-wrapper').css({ 'margin': '5px 10px 10px' });
+                }
+                else {
+                    $('.metric-wrapper').css({ 'margin': '10px 7px 7px' });
+                }
+            }
+        });
+
+    });
+</script>

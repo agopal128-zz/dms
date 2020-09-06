@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Performance Indicator</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/NuoilUI/">
+    <link href="fonts/FontAwesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/ng-tags-input.bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/ng-tags-input.min.css" rel="stylesheet" />
+    <link href="Content/ui-grid.min.css" rel="stylesheet" />
+    <link href="Content/select.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="Styles/kendo/kendo.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet/less" type="text/css" href="Styles/calender.less" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css" />
+    <link href="Styles/slider/ion.rangeSlider.skinFlat.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,700italic,500italic,400italic,300italic,900' rel='stylesheet' type='text/css'>
+    <link href="Styles/NuoilDMS.min.css" rel="stylesheet" />
+    
+</head>
+
+<body data-ng-controller="appController as appCtrl" ng-cloak>
+    <div id="ajaxSpinner" style="display:none"></div>
+    <div class="wrapper container main-page grey-top">
+        <header class="header">
+            <div class="header-t">
+                <div class="header-l">
+                    <div id="sidebar-wrapper" class="header-menu" ng-show="appCtrl.user">
+                        <div class="nav-top">
+                            <a href="#" class="sidebar-toggle menuIcon" role="button">
+                                <i class="fa fa-bars fa-2x"></i>
+                            </a>
+                        </div>
+                        <nav>
+                            <app-menu data-menu="appCtrl.menuData"></app-menu>
+                        </nav>
+                    </div>
+                    <div class="header-title">
+                        <div class="logo">
+                            <a href="#">Key Performance <span>Indicator</span></a>
+                        </div>
+                        <div class="title-wrap">
+                            <div class="title-text"><h5 ng-class="{titleleft:!appCtrl.user}">{{title}}</h5></div>
+                            <scorecard-dropdown data-ng-if="isHierarchyDropdownVisible ||(isScorecardDropdownVisible && appCtrl.dropDownOptions.scorecardExists)"
+                                                data-scorecard-options="appCtrl.dropDownOptions"
+                                                data-is-hierarchy-view=isHierarchyDropdownVisible
+                                                data-is-scorecard-view=isScorecardDropdownVisible
+                                                data-change-hierarchy-scorecard="appCtrl.changeSelectedScorcard(option)"
+                                                data-disable-options="disableHeader">
+                            </scorecard-dropdown>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-r" ng-class="{hierarchy:isHierarchyDropdownVisible,scorecard:isScorecardDropdownVisible}">
+                    <div class="header-r-inner">
+                        <div class="header-toggle" ng-if="isHierarchyDropdownVisible">
+                            <toggle-switch data-status="showAllScorecards" data-label-left="'Include Inactive'" data-toggle="appCtrl.toggleHierarchy(showAllScorecards)">
+
+                            </toggle-switch>
+                        </div>
+                        <div class="header-cal" ng-if="isMonthNavigationVisible && displayMonth.name">
+                            <div class="cal-icon-w">
+                                <!--<i class="fa fa-calendar fa-3x"></i>-->
+                                <div class="cal-icon"></div>
+                            </div>
+                            <div class="month-picker-w">
+                                <div class="month-picker-block">
+                                    <input class="month-picker" type="text" ng-model="displayMonth.selectedMonth" disabled="disabled" />
+                                    <div class="month-arr prev">
+                                        <i class="fa fa-chevron-left" data-ng-click="appCtrl.loadPrevMonthData()" ng-class="{disabled: disableHeader === true}"></i>
+                                    </div>
+                                    <div class="month-arr next">
+                                        <i class="fa fa-chevron-right" data-ng-click="appCtrl.loadNextMonthData()" ng-class="{disabled: disableHeader === true}"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="header-days" ng-if="daysWithoutRecordables != null && isRecordableVisible">
+                            <div class="label"># of Days Since Last Recordable</div>
+                            <div class="val">{{daysWithoutRecordables}}</div>
+                        </div>
+                    </div>
+                    <div class="header-r-inner">
+                        <div class="header-owner" ng-if="!isHierarchyDropdownVisible && kpiOwners.length">
+                            <div class="label"><i class="userpic"></i> <span>KPI Owner</span></div>
+                            <div class="val" ng-class="{inline:kpiOwners.length <= 2}">
+                                <span ng-repeat="vm in kpiOwners">
+                                    {{vm}}<span ng-if="$index < kpiOwners.length-1">,</span>
+                                    <br ng-if="$index == 1" />
+                                </span>
+                            </div>
+                        </div>
+                        <div class="header-end">
+                            <div class="date">
+                                <div class="val">{{appCtrl.currentDate}}</div>
+                            </div>
+
+                            <div ng-if="appCtrl.user" class="user">{{appCtrl.fullName}}</div>
+                            <div ng-if="appCtrl.user" class="logged-in" ng-click="appCtrl.logout()">
+                                    <div class="power-circle">
+                                        <i class="fa fa-power-off"></i>
+                                    </div>
+                                    <p>Sign out</p>
+                            </div>
+                            <div ng-if="!appCtrl.user" class="logged-off" ng-click="appCtrl.login()">
+                                <i class="fa fa-sign-in"></i>
+                                <p>Sign in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="big-shadow"></div>
+        </header>
+
+
+        <div class="content-wrapper">
+            <section class="content">
+                <ng-view></ng-view>
+            </section>
+        </div>
+    </div>
+    <script data-main="main" src="Scripts/require.js"></script>
+</body>
+</html>

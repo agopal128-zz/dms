@@ -1,0 +1,57 @@
+﻿<div class="workday-pattern read-only" ng-if="isReadonly">
+    <label>
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isSunday, dayCircleFilled: ctrl.workdayPattern.isSunday}">S</span>
+    </label>
+    <label>
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isMonday, dayCircleFilled: ctrl.workdayPattern.isMonday}">M</span>
+    </label>
+    <label>
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isTuesday, dayCircleFilled: ctrl.workdayPattern.isTuesday}">T</span>
+    </label>
+    <label>
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isWednesday, dayCircleFilled: ctrl.workdayPattern.isWednesday}">W</span>
+    </label>
+    <label>
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isThursday, dayCircleFilled: ctrl.workdayPattern.isThursday}">T</span>
+    </label>
+    <label>
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isFriday, dayCircleFilled: ctrl.workdayPattern.isFriday}">F</span>
+    </label>
+    <label>
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isSaturday, dayCircleFilled: ctrl.workdayPattern.isSaturday}">S</span>
+    </label>    
+</div>
+
+<div class="workday-pattern active" ng-if="!isReadonly">   
+    <label>
+        <input type="checkbox" id="isSunday" name="isSunday" ng-model="ctrl.workdayPattern.isSunday">
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isSunday, dayCircleFilled: ctrl.workdayPattern.isSunday}">S</span>
+    </label>
+    <label>
+        <input type="checkbox" id="isMonday" name="isMonday" ng-model="ctrl.workdayPattern.isMonday">
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isMonday, dayCircleFilled: ctrl.workdayPattern.isMonday}">M</span>
+    </label>
+    <label>
+        <input type="checkbox" id="isTuesday" name="isTuesday" ng-model="ctrl.workdayPattern.isTuesday">
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isTuesday, dayCircleFilled: ctrl.workdayPattern.isTuesday}">T</span>
+    </label>
+    
+    <label>
+        <input type="checkbox" id="isWednesday" name="isWednesday" ng-model="ctrl.workdayPattern.isWednesday">
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isWednesday, dayCircleFilled: ctrl.workdayPattern.isWednesday}">W</span>
+    </label>
+    
+    <label>
+        <input type="checkbox" id="isThursday" name="isThursday" ng-model="ctrl.workdayPattern.isThursday">
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isThursday, dayCircleFilled: ctrl.workdayPattern.isThursday}">T</span>
+    </label>
+    
+    <label>
+        <input type="checkbox" id="isFriday" name="isFriday" ng-model="ctrl.workdayPattern.isFriday">
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isFriday, dayCircleFilled: ctrl.workdayPattern.isFriday}">F</span>
+    </label>
+    <label>
+        <input type="checkbox" id="isSaturday" name="isSaturday" ng-model="ctrl.workdayPattern.isSaturday">
+        <span ng-class="{dayCircle: !ctrl.workdayPattern.isSaturday, dayCircleFilled: ctrl.workdayPattern.isSaturday}">S</span>
+    </label>    
+</div>

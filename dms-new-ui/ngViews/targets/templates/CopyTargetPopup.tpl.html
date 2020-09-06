@@ -1,0 +1,26 @@
+﻿<div class="popup-wrapper copy-metric">
+    <div class="popup">
+        <div class="popup-content">
+            <h3>
+                Copy metrics from {{ctrl.fromYear.name}} to {{ctrl.toYear.name}}
+            </h3>
+            <div class="col-md-12 select-metric">
+                <div class="col-md-12" ng-repeat="kpi in ctrl.kpiTargets track by $index">
+                    <h4>{{kpi.kpiName}}</h4>
+                    <label ng-repeat="target in kpi.targets track by $index">
+                        <input type="checkbox" ng-model="target.isSelected" ng-init="ctrl.setSelectedTargets(target)" ng-change="ctrl.updateSelectedTargets(target)">
+                        <i class="fa fa-square-o"></i>
+                        <span ng-bind="target.metricName"></span>
+                        <span class="metrictype" ng-if="target.metricType===0"> ( Primary )</span>
+                        <span class="metrictype" ng-if="target.metricType===1"> ( Secondary )</span>
+                    </label>
+                    <span ng-if="!kpi.targets.length">{{kpi.errorMessage}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="popup-bottom">
+            <button class="btn btn-default button-cancel" type="button" ng-click="ctrl.cancel()">Cancel</button>
+            <button class="btn btn-primary button-save" ng-disabled="ctrl.isCopying" ng-if="ctrl.isCopyVisible" type="button" ng-click="ctrl.copy()">Copy</button>
+        </div>
+    </div>
+</div>
